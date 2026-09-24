@@ -302,18 +302,20 @@ def 고르기(후보들, 다썼으면비움=False):
     return random.choice(남은것 or 후보들)
 
 
-def 쓴줄모으기(글아이디):
+def 쓴줄모으기(글아이디, 손님=""):
     """그 글에서 이미 나갔거나 나갈 답글의 줄 전부. 풀이.한판 이 부른다.
+    `손님` 을 주면 **그 손님과 최근에 오간 답글(다른 글 포함)** 도 같이 모은다 (2026-09-26. 글 넘어 이어 세니 같은 줄이 또 나갔다).
 
     손님기록·대기표는 R2 창고를 읽는다. 창고를 못 읽어도 조립은 돌아야 하니 빈 집합으로 떨어진다.
     """
-    if not 글아이디:
+    if not 글아이디 and not 손님:
         return set()
     줄들 = set()
     try:
         import 손님기록
+        키 = 손님기록._손님키(손님) if 손님 else ""
         for x in 손님기록._읽기():
-            if x.get("글아이디") == 글아이디:
+            if (글아이디 and x.get("글아이디") == 글아이디) or (키 and 손님기록._같은자리(x, 키, 글아이디)):
                 줄들.update(l.strip() for l in (x.get("글") or "").splitlines() if l.strip())
     except Exception:
         pass
