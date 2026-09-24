@@ -373,6 +373,7 @@ def digest(who, text, ask_type, tense, day=None, llm_words=None, tone="반말", 
         "기울기벌": dict(말["기울기"]) if 말 else {},
         "되물음벌": dict(말["되물음"]) if 말 else {},
         "찍기벌": list(말.get("찍기") or []) if 말 else [],      # 손님 성향·상대 마음·지금 상황 (2026-09-26)
+        "두갈래": (말.get("두갈래") or "") if 말 else "",          # 속상해서 한 말이면 A / 진짜 끝 앞이면 B
         "질문유형": ask_type,
         "시제": tense,
         "손님단어": words,                              # 되비추기에 쓸 말. 원문에 있는 것만 남았다
