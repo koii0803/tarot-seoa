@@ -976,7 +976,7 @@ def 문맥프롬프트(fact, 오간말, 이번말, 새카드=False, 더뽑을수
 reply 칸에 답글만 넣어라. 설명하지 마라.""" % (
         지난것, 이번말, 설명, 카드머리, 카드표기(fact), 방향표기(fact),
         fact["한줄"], 짚을것,
-        chr(10).join("        " + x for x in (fact.get("찍기벌") or [])) or "        (없음)",
+        chr(10).join("        " + x for x in ((fact.get("찍기벌") or []) + (fact.get("상대벌") or []) + (fact.get("돈벌") or []))) or "        (없음)",
         (fact.get("기울기벌") or {}).get("쉽게") or "",
         fact["열린질문"], 더뽑기)
 
