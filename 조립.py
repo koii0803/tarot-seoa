@@ -563,16 +563,86 @@ def 이번결(fact, 턴):
 }
 
 
+def _되물음(fact):
+    """엔진이 고른 되물음. **이 글에서 이미 나간 거면** 같은 칸의 다른 물음을 고른다 (2026-09-25).
+    같은 카드로 이어가니까 엔진이 같은 물음을 또 줬다 — 1턴이랑 2턴이 똑같이 끝났다 (@cola_184 실측)."""
+    q = (fact.get("열린질문") or "").strip()
+    if q and not _썼나(q):
+        return q
+    유형, 시제 = fact.get("질문유형"), fact.get("시제")
+    pool = []
+    c = 엔진.CARD_Q.get(fact.get("슬러그") or "")
+    if isinstance(c, dict) and isinstance(c.get(유형), dict):
+        pool = list(c[유형].get(시제) or [])
+    try:
+        pool += list(엔진.OPEN_Q_BAN[유형][시제])
+    except Exception:
+        pass
+    return 고르기(pool) or q
+
+
 def 끝줄(fact, 턴, 결):
     """마지막 줄. 결이 먼저고 턴은 그 다음이다."""
     if 결 == "되묻기":
-        return (fact.get("열린질문") or "").strip()
+        return _되물음(fact)
     if 결 == "짚기":
         return 고르기(단정줄)
     if 결 == "받아주기":
         return 고르기(남겨두기줄)
     # 추측 — 찍은 걸 확인받는다. 단정하지 않는다
-    return (fact.get("열린질문") or "").strip() or 고르기(남겨두기줄)
+    return _되물음(fact) or 고르기(남겨두기줄)
+
+
+# 손님이 못 알아들었다고 할 때 (2026-09-25 @cola_184 "잘 이해가 안가서 그러는데 무슨말인지 다시 설명해줄수있을까")
+설명요청꼴 = re.compile(r"(무슨\s*(뜻|말|의미|소리)|뭔\s*(뜻|말|소리)|이해가?\s*(잘\s*)?안|설명(해|좀)|다시\s*(말|설명)|"
+                       r"어렵|무슨\s*의미|뭔\s*의미|뭔말|뭔뜻|못\s*알아|이해\s*못)")
+
+설명여는줄 = [
+    "아 어렵게 말했네 다시 쉽게 갈게",
+    "미안 돌려 말했다 그냥 풀어줄게",
+    "그러네 비유가 많았다 쉽게 다시",
+    "알았어 쉬운 말로 다시 할게",
+]
+설명카드줄 = [
+    "{카드} {방향}{{이}} 나온 거고",
+    "니 카드는 {카드} {방향}{{이야}}",
+]
+설명뜻줄 = [
+    "쉽게 말하면 {쉽게}",
+    "한마디로 {쉽게}",
+    "그러니까 {쉽게}",
+]
+설명끝줄 = [
+    "이제 좀 잡혀?",
+    "이 정도면 그림 그려져?",
+    "여기서 더 궁금한 건 뭐야",
+]
+
+
+def 설명요청이냐(댓글):
+    return bool(설명요청꼴.search((댓글 or "").replace(" ", "")))
+
+
+def 설명조립(fact, 댓글):
+    """못 알아들었다는 손님한테 **비유 없이** 풀어준다. 카드 이름 · 쉬운 뜻 · 기우는 방향 · 손님이 새로 적은 말."""
+    칸 = 기울기.get(fact.get("슬러그") or "")
+    것 = (칸.get(fact.get("방향") or "정방향") if isinstance(칸, dict) else None) or {}
+    쉽게 = (것.get("쉽게") or _한줄줄이기(fact)).strip()
+    기울 = 고르기(것.get("줄") or [])
+    줄들 = [고르기(설명여는줄),
+            고르기(설명카드줄).format(카드=fact.get("카드", ""), 방향=fact.get("방향", "")),
+            고르기(설명뜻줄).format(쉽게=쉽게)]
+    # 손님이 이번에 새로 밝힌 마음이 있으면 그걸로 좁힌다 ("재회 하고싶어")
+    절 = (fact.get("손님절") or "").strip()
+    명사 = fact.get("손님명사") or []
+    if 절 and not 설명요청꼴.search(절.replace(" ", "")):
+        줄들.append("%s 그 말에 놓고 보면" % 절)
+    elif 명사:
+        줄들.append("%s 쪽으로 좁혀서 보면" % 명사[0])
+    if 기울:
+        줄들.append(기울)
+    줄들.append(고르기(설명끝줄))
+    return _부호치우기(조사맞추기(chr(10).join(x for x in 줄들 if x.strip())))
 
 
 def 조립(fact, 댓글, 턴=1, 피할줄=None, 새카드=False):
@@ -593,6 +663,8 @@ def 조립(fact, 댓글, 턴=1, 피할줄=None, 새카드=False):
     global _피할줄
     _피할줄 = set(피할줄 or ())
     try:
+        if 턴 >= 2 and 설명요청이냐(댓글):
+            return 설명조립(fact, 댓글)
         return _조립(fact, 댓글, 턴, 새카드)
     finally:
         _피할줄 = set()
