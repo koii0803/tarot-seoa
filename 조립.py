@@ -328,6 +328,11 @@ def 쓴줄모으기(글아이디):
 
 
 def 받침있나(글자):
+    # 숫자 이름 카드(컵 2 · 소드 10)가 생겨서 숫자도 본다 (2026-09-25 78장)
+    if 글자 and 글자 in "013678":
+        return True           # 영 일 삼 육 칠 팔
+    if 글자 and 글자 in "2459":
+        return False          # 이 사 오 구
     if not 글자 or not ("가" <= 글자 <= "힣"):
         return False
     return (ord(글자) - 0xAC00) % 28 != 0
@@ -347,7 +352,7 @@ def 조사맞추기(글):
         return 앞 + 조사고르기(앞, 조사)
     # 낱말 바로 뒤에 붙은 조사만 본다
     붙임 = "|".join(sorted(조사짝, key=len, reverse=True))
-    return re.sub(r"([가-힣]+)\{(%s)\}" % 붙임, 바꿈, 글)
+    return re.sub(r"([가-힣0-9]+)\{(%s)\}" % 붙임, 바꿈, 글)
 
 
 def _부호치우기(글):
