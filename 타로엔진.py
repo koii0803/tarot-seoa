@@ -62,6 +62,21 @@ CARDS = _load("카드78.json")                       # 78장 (2026-09-25). 22장
 OPEN_Q = _load("열린질문.json")                     # 유형 x 시제 x 3벌
 OPEN_Q_BAN = _load("열린질문_반말.json")             # 같은 칸의 반말 벌 (스레드용)
 CARD_Q = _load("카드별질문.json")                   # 카드 고유. 비어 있으면 위로 내려간다
+# 카드 이름·수트·정역방향 없이 손님 상황으로 말하는 글감 (2026-09-26 사장님 지시). 있는 카드는 이게 먼저다
+try:
+    CARD_TALK = _load("카드말.json")
+except Exception:
+    CARD_TALK = {}
+
+
+def 카드말(slug, 방향):
+    v = CARD_TALK.get(slug)
+    return v.get(방향) if isinstance(v, dict) else None
+
+
+def _고정고르기(후보, h, 자리):
+    후보 = [x for x in (후보 or []) if x]
+    return 후보[int(h[자리:자리 + 4], 16) % len(후보)] if 후보 else ""
 
 # 말투. 스레드는 반말, 사이트는 존댓말. 2026-09-23 사장님 지시로 반말에 "약간의 여성미"를 넣었다.
 TONES = ("반말", "존대")
@@ -322,6 +337,11 @@ def digest(who, text, ask_type, tense, day=None, llm_words=None, tone="반말", 
     card, h = d["카드"], d["seed"]
     sym = pick_symbol(card, h)
     q, qsrc = pick_question(card["slug"], ask_type, tense, h, tone)
+    말 = 카드말(card["slug"], d["방향"]) if tone == "반말" else None
+    if 말:
+        되 = (말.get("되물음") or {}).get(ask_type) or []
+        if 되:
+            q, qsrc = _고정고르기(되, h, 16), "카드말"
 
     멈춤, 까닭, 한줄 = stop_check(text)
     heavy = (까닭 == "무거움")
@@ -344,7 +364,13 @@ def digest(who, text, ask_type, tense, day=None, llm_words=None, tone="반말", 
         "상징하나": (sym or {}).get("part", ""),      # 이 상징 말고 다른 그림 얘기는 못 쓴다
         "상징뜻": (sym or {}).get("means", ""),
         "상징전부": [p["part"] for p in (card.get("symbolPoints") or [])],
-        "한줄": card["upright_summary"] if d["방향"] == "정방향" else card["reversed_summary"],
+        "한줄": (_고정고르기(말["뜻"], h, 20) if 말 else
+                 (card["upright_summary"] if d["방향"] == "정방향" else card["reversed_summary"])),
+        # 카드말 글감 (있는 카드만). 조립·풀이가 이걸 먼저 쓴다
+        "뜻벌": list(말["뜻"]) if 말 else [],
+        "그림벌": list(말["그림"]) if 말 else [],
+        "기울기벌": dict(말["기울기"]) if 말 else {},
+        "되물음벌": dict(말["되물음"]) if 말 else {},
         "질문유형": ask_type,
         "시제": tense,
         "손님단어": words,                              # 되비추기에 쓸 말. 원문에 있는 것만 남았다
@@ -375,6 +401,9 @@ def 그림있나(fact):
 # 6. 나온 글 검사 — 재료 밖으로 나갔는지 본다
 # ──────────────────────────────────────────────────────────────
 
+카드문법말 = ("정방향", "역방향", "완드", "소드", "펜타클", "컵 ", "아르카나", "메이저", "마이너", "수트", "똑바로 나왔", "똑바로 나온")
+
+
 def check_output(text, fact, need_question=True):
     """풀이 글을 검사한다. 빈 목록이면 통과.
     need_question=False 는 되묻지 않는 갈래("카드만")에 쓴다."""
@@ -389,23 +418,23 @@ def check_output(text, fact, need_question=True):
     if m:
         bad.append("미래 단정: %s" % m.group(1))
 
-    # 뽑힌 카드 이름은 먼저 지우고 본다. "여황제" 안에 "황제"가 들어 있어서 오탐이 났다
-    # (2026-09-23 실제 글에서 걸림)
-    t2 = t.replace(fact["카드"], " ")
+    # 카드 문법은 손님이 모른다 (2026-09-26 사장님). 수트·정역방향 말이 나오면 걸린다
+    for w in 카드문법말:
+        if w in t:
+            bad.append("카드 문법 말: %s" % w.strip())
 
-    # 뽑힌 카드 말고 다른 카드 이름을 꺼냈는가
+    t2 = t
+    # 카드 이름을 꺼냈는가 — **뽑힌 카드도 포함** (2026-09-26. 그림이 붙어 있으니 이름은 안 부른다)
     # 달·탑·별·힘 같은 두 글자 이름은 보통 낱말과 겹친다("2달 반"의 달). 그래서 짧은 이름은
     # 뒤에 "카드"나 방향이 붙었을 때만 카드로 본다. (2026-09-23 실제 글에서 오탐이 나와 고침)
     for c in CARDS:
-        if c["id"] == fact["카드번호"]:
-            continue
         이름 = c["ko"]
         if len(이름) >= 3:
             걸림 = 이름 in t2
         else:
             걸림 = bool(re.search(re.escape(이름) + r"\s*(카드|정방향|역방향)", t2))
         if 걸림:
-            bad.append("다른 카드 언급: %s" % 이름)
+            bad.append(("카드 이름: %s" if c["id"] == fact["카드번호"] else "다른 카드 언급: %s") % 이름)
 
     # 그 카드에 없는 상징을 지어냈는가
     for c in CARDS:
