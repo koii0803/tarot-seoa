@@ -2,12 +2,12 @@
 """카드 뜻 44개를 **반말 한 줄로 미리 써서 파일에 굳힌다** (2026-09-24 사장님 지시).
 
     python 반말뜻만들기.py --한장 death     한 장만 만들어 본다 (저장 안 함)
-    python 반말뜻만들기.py --전부           22장 x 정역 = 44줄
+    python 반말뜻만들기.py --전부           78장 x 정역 = 156줄
     python 반말뜻만들기.py --전부 --이어서   이미 있는 건 건너뛴다
     python 반말뜻만들기.py --본다           몇 줄 채워졌나
 
 왜
-    카드 뜻(`카드22.json` 의 upright_summary·reversed_summary)은 **사이트용 존댓말**이다.
+    카드 뜻(`카드78.json` 의 upright_summary·reversed_summary)은 **사이트용 존댓말**이다.
     1턴 조립글에 그대로 박으면 "균형이 무너진 채 달리고 있습니다" 처럼 말투가 섞인다.
 
     그래서 44줄을 **한 번만** AI 로 반말 한 줄씩 만들어 `데이터/반말뜻.json` 에 굳힌다.
@@ -150,7 +150,7 @@ def 전부(이어서=False):
     for i, card in enumerate(엔진.CARDS, 1):
         슬러그 = card["slug"]
         if 이어서 and isinstance(d.get(슬러그), dict):
-            print("[%2d/22] %-16s 있음" % (i, 슬러그))
+            print("[%2d/78] %-16s 있음" % (i, 슬러그))
             continue
         나온것 = None
         for _ in range(3):
@@ -158,11 +158,11 @@ def 전부(이어서=False):
             if 나온것:
                 break
         if not 나온것:
-            print("[%2d/22] %-16s 실패" % (i, 슬러그))
+            print("[%2d/78] %-16s 실패" % (i, 슬러그))
             continue
         d[슬러그] = 나온것
         쓰기(d)
-        print("[%2d/22] %-16s 정 %s / 역 %s" % (i, 슬러그, 나온것["정방향"], 나온것["역방향"]))
+        print("[%2d/78] %-16s 정 %s / 역 %s" % (i, 슬러그, 나온것["정방향"], 나온것["역방향"]))
     수 = sum(1 for k, v in d.items() if not k.startswith("_") and isinstance(v, dict))
     print("\n%d장 채움 → %s" % (수, 나갈곳.name))
     return 0

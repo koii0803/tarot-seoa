@@ -5,7 +5,7 @@
 그림이 인터넷 주소를 갖고 있어야 한다. 그 주소를 만드는 자리다.
 
     python 그림올리기.py --확인             R2 연결 시험 (작은 파일 올리고 읽고 지움)
-    python 그림올리기.py --올리기            뒷면 + 앞면 22장 올리고 주소표 저장
+    python 그림올리기.py --올리기            뒷면 + 앞면 78장 올리고 주소표 저장
     python 그림올리기.py --올리기 --뒷면만    뒷면 한 장만
     python 그림올리기.py --목록             지금 올라가 있는 것
     python 그림올리기.py --주소 13-death    한 장 주소만 보기
@@ -40,13 +40,13 @@ except Exception:
     pass
 
 HERE = Path(__file__).resolve().parent
-IMG_DIR = HERE.parent / "카드이미지" / "타로22장"
-REV_DIR = HERE.parent / "카드이미지" / "타로22장_역방향"   # 180도 돌린 것. --역방향 이 만든다
+IMG_DIR = HERE.parent / "카드이미지" / "타로78장"
+REV_DIR = HERE.parent / "카드이미지" / "타로78장_역방향"   # 180도 돌린 것. --역방향 이 만든다
 BACK_PNG = HERE.parent / "카드이미지" / "타로-카드뒷면.png"
-카드표 = HERE / "데이터" / "카드22.json"
+카드표 = HERE / "데이터" / "카드78.json"
 주소표 = HERE / "데이터" / "그림주소.json"
 
-접두어 = "tarot/"          # 이 밑에서만 논다
+접두어 = "tarot78/"        # 이 밑에서만 논다 (2026-09-25 78장. 옛 tarot/ 는 1년 캐시라 새 접두어)
 필요한값 = ("R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET",
             "R2_PUBLIC_URL", "CLOUDFLARE_ACCOUNT_ID_2")
 
@@ -112,7 +112,7 @@ def 읽어보기(url, 기다림=20):
 
 # ── 올릴 것 고르기 ────────────────────────────────────────────────────
 def 카드목록():
-    """카드22.json 에서 슬러그와 PNG 파일 이름을 가져온다. 파일 이름을 여기서 지어내지 않는다."""
+    """카드78.json 에서 슬러그와 PNG 파일 이름을 가져온다. 파일 이름을 여기서 지어내지 않는다."""
     데이터 = json.loads(io.open(카드표, encoding="utf-8").read())
     카드들 = 데이터.get("cards", 데이터) if isinstance(데이터, dict) else 데이터
     나온것 = []

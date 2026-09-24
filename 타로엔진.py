@@ -44,9 +44,9 @@ DATA = HERE / "데이터"
 # 카드 고정에 쓰는 소금. 바꾸면 모두의 카드가 바뀐다.
 SALT = "paljaoppa-tarot-2026"
 
-# 그림이 있는 곳. 파일 이름은 데이터/카드22.json 의 img 에 같이 들어 있다.
+# 그림이 있는 곳. 파일 이름은 데이터/카드78.json 의 img 에 같이 들어 있다.
 # 텍스트와 그림을 따로 찾지 않게 한 군데로 모아 뒀다 (2026-09-23 사장님 지시).
-IMG_DIR = (HERE.parent / "카드이미지" / "타로22장")
+IMG_DIR = (HERE.parent / "카드이미지" / "타로78장")
 BACK_IMG = (HERE.parent / "카드이미지" / "타로-카드뒷면.webp")
 
 # ──────────────────────────────────────────────────────────────
@@ -58,7 +58,7 @@ def _load(name):
         return json.load(f)
 
 
-CARDS = _load("카드22.json")                       # 22장. 사이트 tarot-pages.ts 에서 뽑아 복사해 둔 것
+CARDS = _load("카드78.json")                       # 78장 (2026-09-25). 22장 + 마이너 56장
 OPEN_Q = _load("열린질문.json")                     # 유형 x 시제 x 3벌
 OPEN_Q_BAN = _load("열린질문_반말.json")             # 같은 칸의 반말 벌 (스레드용)
 CARD_Q = _load("카드별질문.json")                   # 카드 고유. 비어 있으면 위로 내려간다
@@ -143,7 +143,7 @@ def draw(who, day=None):
     """그 사람의 그날 카드. 몇 번을 불러도 같은 값이 나온다."""
     day = day or today_str()
     h = _seed(who, day)
-    card = BY_ID[int(h[0:8], 16) % 22]
+    card = BY_ID[int(h[0:8], 16) % len(CARDS)]
     direction = DIRECTIONS[int(h[8:12], 16) % 2]
     return {"카드": card, "방향": direction, "날짜": day, "seed": h}
 
@@ -512,13 +512,13 @@ def selftest():
         else:
             fail.append(name)
 
-    t("카드 22장", len(CARDS) == 22)
+    t("카드 78장", len(CARDS) == 78)
     t("상징 전부 있음", all(len(c["symbolPoints"]) >= 4 for c in CARDS))
     t("한 줄 전부 있음", all(c["upright_summary"] and c["reversed_summary"] for c in CARDS))
     # 그림이 텍스트 옆에 같이 있나 (2026-09-23)
-    t("22장 전부 그림 이름 있음", all(c.get("img") and c.get("imgPng") and c.get("webPath") for c in CARDS))
+    t("78장 전부 그림 이름 있음", all(c.get("img") and c.get("imgPng") and c.get("webPath") for c in CARDS))
     있는것 = sum(1 for c in CARDS if (IMG_DIR / c["img"]).exists())
-    t("그림 파일 22장 전부 있음 (%d/22)" % 있는것, 있는것 == 22)
+    t("그림 파일 78장 전부 있음 (%d/78)" % 있는것, 있는것 == 78)
     t("뒷면 파일 있음", BACK_IMG.exists())
     f그림 = digest("@i", "요즘 일이 안 풀려", "일", "지금", "2026-09-23")
     t("재료에 그림이 같이 나온다", 그림있나(f그림))
@@ -533,15 +533,15 @@ def selftest():
     t("다른 사람 = 갈린다", (a["카드"]["id"], a["방향"]) != (c["카드"]["id"], c["방향"]))
     t("다음 날 = 갈린다", (a["카드"]["id"], a["방향"]) != (d["카드"]["id"], d["방향"]))
 
-    # 22장이 고루 나오나 (2200명 돌려 본다)
+    # 78장이 고루 나오나 (7800명 돌려 본다)
     seen = {}
-    for i in range(2200):
+    for i in range(7800):
         k = draw("u%d" % i, "2026-09-23")["카드"]["id"]
         seen[k] = seen.get(k, 0) + 1
-    t("22장 전부 나옴", len(seen) == 22)
+    t("78장 전부 나옴", len(seen) == 78)
     t("한 장에 쏠리지 않음", max(seen.values()) < 200)
-    정 = sum(1 for i in range(2200) if draw("u%d" % i, "2026-09-23")["방향"] == "정방향")
-    t("정/역이 한쪽으로 안 쏠림", 900 < 정 < 1300)
+    정 = sum(1 for i in range(7800) if draw("u%d" % i, "2026-09-23")["방향"] == "정방향")
+    t("정/역이 한쪽으로 안 쏠림", 3400 < 정 < 4400)
 
     f = digest("아무개", "요즘 일이 안 풀려요 회사도 그만두고 싶고", "일", "지금", "2026-09-23")
     t("재료에 상징 있음", bool(f["상징하나"]))

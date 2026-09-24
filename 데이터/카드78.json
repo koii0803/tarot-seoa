@@ -1,0 +1,2586 @@
+[
+ {
+  "id": 0,
+  "slug": "fool",
+  "ko": "바보",
+  "roman": "0",
+  "en": "THE FOOL",
+  "keywords": "시작 · 자유 · 무모함",
+  "symbol": "절벽 끝의 한 발 · 손에 든 금빛 장미 · 얼굴 없는 은빛 가면 · 찢어진 검은 망토 · 뒤의 별 하늘 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "절벽 끝의 한 발",
+    "means": "한 발은 이미 허공이야. 재는 단계는 지났어"
+   },
+   {
+    "part": "손에 든 금빛 장미",
+    "means": "빈손이 아니야. 하나는 쥐고 가는 거야"
+   },
+   {
+    "part": "얼굴 없는 은빛 가면",
+    "means": "누구 눈치도 안 보는 얼굴이야. 남이 아니라 니가 가는 길"
+   },
+   {
+    "part": "찢어진 검은 망토",
+    "means": "가진 걸 다 챙기고 가는 게 아니야. 너덜해도 가"
+   },
+   {
+    "part": "뒤의 별 하늘",
+    "means": "바닥이 아니라 하늘을 보고 있어. 아래는 안 봐"
+   }
+  ],
+  "upright_summary": "시작하는 카드입니다. 준비가 끝나서가 아니라, 기다리면 못 가니까.",
+  "reversed_summary": "겁이 아니라 준비 부족입니다. 지금 발밑이 안 보입니다.",
+  "img": "00-fool.png",
+  "imgPng": "00-fool.png",
+  "webPath": "/img/tarot/00-fool.png"
+ },
+ {
+  "id": 1,
+  "slug": "magician",
+  "ko": "마법사",
+  "roman": "I",
+  "en": "THE MAGICIAN",
+  "keywords": "능력 · 어필 · 손기술",
+  "symbol": "머리 위 은빛 무한 기호 · 떠 있는 네 가지 도구 · 들어 올린 한 손 · 검은 옷에 흘러내리는 금 · 옆의 검은 제단 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "머리 위 은빛 무한 기호",
+    "means": "끝이 없다는 표시야. 한 번으로 끝나는 자리가 아니야"
+   },
+   {
+    "part": "떠 있는 네 가지 도구",
+    "means": "잔 · 칼 · 지팡이 · 동전. 필요한 건 이미 다 떠 있어"
+   },
+   {
+    "part": "들어 올린 한 손",
+    "means": "위에서 받아서 아래로 내리는 자세. 시작 버튼은 니 손이야"
+   },
+   {
+    "part": "검은 옷에 흘러내리는 금",
+    "means": "재료가 넘쳐. 부족해서 못 하는 게 아니야"
+   },
+   {
+    "part": "옆의 검은 제단",
+    "means": "펼쳐 놓을 자리는 있어. 안 올려놨을 뿐"
+   }
+  ],
+  "upright_summary": "재료는 이미 다 있습니다. 안 누른 건 시작 버튼뿐입니다.",
+  "reversed_summary": "포장이 알맹이보다 큽니다. 말이 아니라 기록을 보세요.",
+  "img": "01-magician.png",
+  "imgPng": "01-magician.png",
+  "webPath": "/img/tarot/01-magician.png"
+ },
+ {
+  "id": 2,
+  "slug": "high-priestess",
+  "ko": "여사제",
+  "roman": "II",
+  "en": "THE HIGH PRIESTESS",
+  "keywords": "직감 · 침묵 · 비밀",
+  "symbol": "은빛 기둥과 금 흘러내린 검은 기둥 · 얼굴을 가린 베일 · 손 안의 빛나는 원 · 머리 위 왕관 · 받침대의 알 수 없는 글자 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "은빛 기둥과 금 흘러내린 검은 기둥",
+    "means": "밝은 쪽과 어두운 쪽 사이에 앉아 있어. 한쪽만 보면 못 읽어"
+   },
+   {
+    "part": "얼굴을 가린 베일",
+    "means": "다 안 보여줘. 캐물어도 안 벗어"
+   },
+   {
+    "part": "손 안의 빛나는 원",
+    "means": "답은 손 안에 있어. 밖에 없어"
+   },
+   {
+    "part": "머리 위 왕관",
+    "means": "모르는 사람이 아니야. 알고도 안 말하는 사람이야"
+   },
+   {
+    "part": "받침대의 알 수 없는 글자",
+    "means": "읽을 수 있는 사람한테만 읽혀"
+   }
+  ],
+  "upright_summary": "답은 이미 안에 있습니다. 소리 내지 않을 뿐입니다.",
+  "reversed_summary": "가려둔 것이 새고 있습니다. 캐물으면 더 닫힙니다.",
+  "img": "02-high-priestess.png",
+  "imgPng": "02-high-priestess.png",
+  "webPath": "/img/tarot/02-high-priestess.png"
+ },
+ {
+  "id": 3,
+  "slug": "empress",
+  "ko": "여황제",
+  "roman": "III",
+  "en": "THE EMPRESS",
+  "keywords": "풍요 · 애정 · 결실",
+  "symbol": "머리 뒤 꽃무늬 원 · 금과 검정이 섞인 긴 옷 · 방패의 여성 기호와 석류 · 손에 든 별 지팡이 · 검은 꽃 왕관 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "머리 뒤 꽃무늬 원",
+    "means": "심은 게 자라서 펼쳐진 모양이야. 하루아침에 된 게 아니야"
+   },
+   {
+    "part": "금과 검정이 섞인 긴 옷",
+    "means": "풍성해. 부족한 자리가 아니야"
+   },
+   {
+    "part": "방패의 여성 기호와 석류",
+    "means": "지키면서 낳는 자리. 받는 것과 주는 것이 같이 있어"
+   },
+   {
+    "part": "손에 든 별 지팡이",
+    "means": "힘이 있는데 휘두르지 않고 쥐고만 있어"
+   },
+   {
+    "part": "검은 꽃 왕관",
+    "means": "화려한데 검어. 좋은 것도 무게가 있어"
+   }
+  ],
+  "upright_summary": "거두는 카드입니다. 심은 것이 돌아옵니다.",
+  "reversed_summary": "주는 쪽이 마르고 있습니다. 공급을 잠시 줄이세요.",
+  "img": "03-empress.png",
+  "imgPng": "03-empress.png",
+  "webPath": "/img/tarot/03-empress.png"
+ },
+ {
+  "id": 4,
+  "slug": "emperor",
+  "ko": "황제",
+  "roman": "IV",
+  "en": "THE EMPEROR",
+  "keywords": "주도권 · 책임 · 안정",
+  "symbol": "금이 흐르는 검은 돌 옥좌 · 팔걸이의 숫양 머리 · 손에 쥔 은빛 홀 · 무릎 위의 구슬 · 은빛 갑옷과 굳은 얼굴 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "금이 흐르는 검은 돌 옥좌",
+    "means": "갈라진 자리마다 금이 채워져 있어. 상처가 힘이 된 거야"
+   },
+   {
+    "part": "팔걸이의 숫양 머리",
+    "means": "밀어붙이는 힘이야. 물러서는 자리가 아니야"
+   },
+   {
+    "part": "손에 쥔 은빛 홀",
+    "means": "결정권이 손에 있어. 남한테 없어"
+   },
+   {
+    "part": "무릎 위의 구슬",
+    "means": "세상을 손바닥에 놓고 있어. 다 보고 있다는 뜻"
+   },
+   {
+    "part": "은빛 갑옷과 굳은 얼굴",
+    "means": "감정을 밖으로 안 내. 그래서 세고 그래서 외로워"
+   }
+  ],
+  "upright_summary": "책임이 따라오는 대신 결정권이 오는 카드입니다.",
+  "reversed_summary": "힘으로 밀면 부러집니다. 주도권을 내려놓는 쪽이 실리를 가져갑니다.",
+  "img": "04-emperor.png",
+  "imgPng": "04-emperor.png",
+  "webPath": "/img/tarot/04-emperor.png"
+ },
+ {
+  "id": 5,
+  "slug": "hierophant",
+  "ko": "교황",
+  "roman": "V",
+  "en": "THE HIEROPHANT",
+  "keywords": "조언 · 전통 · 정석",
+  "symbol": "삼중 왕관 · 들어 올린 두 손가락 · 무릎 꿇은 은빛 두 사람 · 손에 든 삼중 십자 지팡이 · 뒤의 스테인드글라스 빛 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "삼중 왕관",
+    "means": "세 겹이야. 한 겹으로 안 되는 자리"
+   },
+   {
+    "part": "들어 올린 두 손가락",
+    "means": "가르치는 손이야. 이미 답이 정해진 쪽"
+   },
+   {
+    "part": "무릎 꿇은 은빛 두 사람",
+    "means": "묻는 사람이 둘이야. 니 얘기만이 아니야"
+   },
+   {
+    "part": "손에 든 삼중 십자 지팡이",
+    "means": "정해진 길이 있다는 표시야. 새 길이 아니라"
+   },
+   {
+    "part": "뒤의 스테인드글라스 빛",
+    "means": "위에서 내려오는 빛이야. 니가 만든 게 아니라 받는 것"
+   }
+  ],
+  "upright_summary": "정석이 최단 거리인 구간입니다. 해본 사람에게 물으세요.",
+  "reversed_summary": "정석이 함정인 구간입니다. 원래 그렇다는 말을 의심하세요.",
+  "img": "05-hierophant.png",
+  "imgPng": "05-hierophant.png",
+  "webPath": "/img/tarot/05-hierophant.png"
+ },
+ {
+  "id": 6,
+  "slug": "lovers",
+  "ko": "연인",
+  "roman": "VI",
+  "en": "THE LOVERS",
+  "keywords": "끌림 · 선택 · 진심",
+  "symbol": "이마를 맞댄 두 사람 · 둘을 감은 금과 은 띠 · 위의 은빛 날개 천사 · 흘러내리는 금빛 고리 · 검은 받침 위 맨발 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "이마를 맞댄 두 사람",
+    "means": "얼굴이 없어도 붙어 있어. 눈이 아니라 마음이 닿은 거"
+   },
+   {
+    "part": "둘을 감은 금과 은 띠",
+    "means": "묶인 건데 사슬이 아니야. 감긴 거야"
+   },
+   {
+    "part": "위의 은빛 날개 천사",
+    "means": "둘만의 일이 아니야. 위에서 보는 눈이 있어"
+   },
+   {
+    "part": "흘러내리는 금빛 고리",
+    "means": "축복이 내려오는 중이야. 다 내려온 건 아니고"
+   },
+   {
+    "part": "검은 받침 위 맨발",
+    "means": "꾸민 게 없어. 그대로 서 있는 거"
+   }
+  ],
+  "upright_summary": "마음이 이미 고른 카드입니다. 남은 건 용기뿐입니다.",
+  "reversed_summary": "완벽한 선택지를 기다리는 게 제일 나쁜 선택입니다.",
+  "img": "06-lovers.png",
+  "imgPng": "06-lovers.png",
+  "webPath": "/img/tarot/06-lovers.png"
+ },
+ {
+  "id": 7,
+  "slug": "chariot",
+  "ko": "전차",
+  "roman": "VII",
+  "en": "THE CHARIOT",
+  "keywords": "돌진 · 승리 · 속도",
+  "symbol": "검은 사자와 은빛 사자 · 손에 쥔 금빛 고삐 · 우주를 가르는 바퀴 · 든 은빛 창 · 흩날리는 파편 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "검은 사자와 은빛 사자",
+    "means": "왼쪽과 오른쪽이 달라. 둘을 같이 몰아야 가"
+   },
+   {
+    "part": "손에 쥔 금빛 고삐",
+    "means": "고삐는 있어. 놓치면 어디로 튈지 몰라"
+   },
+   {
+    "part": "우주를 가르는 바퀴",
+    "means": "멈춰 있는 그림이 아니야. 이미 달리는 중"
+   },
+   {
+    "part": "든 은빛 창",
+    "means": "찌르는 자리야. 지키는 자리가 아니라"
+   },
+   {
+    "part": "흩날리는 파편",
+    "means": "속도가 붙으면 뭔가는 부서져"
+   }
+  ],
+  "upright_summary": "속도가 무기인 구간입니다. 먼저 도착하는 쪽이 가져갑니다.",
+  "reversed_summary": "브레이크가 없는 채로 달리고 있습니다. 일단 세우세요.",
+  "img": "07-chariot.png",
+  "imgPng": "07-chariot.png",
+  "webPath": "/img/tarot/07-chariot.png"
+ },
+ {
+  "id": 8,
+  "slug": "strength",
+  "ko": "힘",
+  "roman": "VIII",
+  "en": "STRENGTH",
+  "keywords": "인내 · 부드러움 · 길들이기",
+  "symbol": "금빛 갈기의 은빛 사자 · 사자 입에 얹은 맨손 · 여자의 고개 숙인 얼굴 · 금빛 코르셋 · 절벽 위의 두 발 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "금빛 갈기의 은빛 사자",
+    "means": "사나운데 금이 흘러. 길들면 힘이 돼"
+   },
+   {
+    "part": "사자 입에 얹은 맨손",
+    "means": "무기가 없어. 손 하나로 하는 거야"
+   },
+   {
+    "part": "여자의 고개 숙인 얼굴",
+    "means": "눈을 안 부라려. 낮춰서 이기는 거"
+   },
+   {
+    "part": "금빛 코르셋",
+    "means": "조여 있어. 힘은 밖이 아니라 안에 있어"
+   },
+   {
+    "part": "절벽 위의 두 발",
+    "means": "바닥이 좁아. 버티는 자리"
+   }
+  ],
+  "upright_summary": "단판이 아니라 길들이기입니다. 시간으로 이기는 판입니다.",
+  "reversed_summary": "판단이 틀린 게 아니라 체력이 모자랍니다. 회복이 먼저입니다.",
+  "img": "08-strength.png",
+  "imgPng": "08-strength.png",
+  "webPath": "/img/tarot/08-strength.png"
+ },
+ {
+  "id": 9,
+  "slug": "hermit",
+  "ko": "은둔자",
+  "roman": "IX",
+  "en": "THE HERMIT",
+  "keywords": "거리두기 · 성찰 · 등불",
+  "symbol": "손에 든 등불 · 절벽 끝의 발 · 얼굴을 덮은 두건 · 뱀처럼 꼬인 지팡이 · 사방의 검은 안개 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "손에 든 등불",
+    "means": "불빛이 하나야. 멀리 안 비춰. 한 걸음씩"
+   },
+   {
+    "part": "절벽 끝의 발",
+    "means": "혼자 서 있는 자리야. 아무도 안 올라와"
+   },
+   {
+    "part": "얼굴을 덮은 두건",
+    "means": "안 보여줘. 지금은 보여줄 때가 아니야"
+   },
+   {
+    "part": "뱀처럼 꼬인 지팡이",
+    "means": "기대는 게 있어. 혼자여도 아예 빈손은 아니야"
+   },
+   {
+    "part": "사방의 검은 안개",
+    "means": "밖이 안 보여. 안개가 걷히길 기다리는 자리"
+   }
+  ],
+  "upright_summary": "혼자 있는 시간이 답을 만듭니다. 남의 의견을 끄세요.",
+  "reversed_summary": "더 고민하는 건 신중함이 아니라 회피입니다.",
+  "img": "09-hermit.png",
+  "imgPng": "09-hermit.png",
+  "webPath": "/img/tarot/09-hermit.png"
+ },
+ {
+  "id": 10,
+  "slug": "wheel-of-fortune",
+  "ko": "운명의 수레바퀴",
+  "roman": "X",
+  "en": "WHEEL OF FORTUNE",
+  "keywords": "전환점 · 타이밍 · 흐름",
+  "symbol": "돌아가는 별자리 바퀴 · 바퀴 위의 금빛 날개 인물 · 바퀴 양쪽의 검은 두 형상 · 톱니에서 흘러내리는 금 · 가운데 빛나는 우주 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "돌아가는 별자리 바퀴",
+    "means": "열두 칸이 돌아. 지금 칸에 계속 있진 않아"
+   },
+   {
+    "part": "바퀴 위의 금빛 날개 인물",
+    "means": "제일 위에 앉은 자리. 근데 바퀴는 돌아"
+   },
+   {
+    "part": "바퀴 양쪽의 검은 두 형상",
+    "means": "올라가는 쪽과 내려가는 쪽. 같은 바퀴에 둘 다 있어"
+   },
+   {
+    "part": "톱니에서 흘러내리는 금",
+    "means": "돌 때 흘리는 게 있어. 공짜로 안 돌아"
+   },
+   {
+    "part": "가운데 빛나는 우주",
+    "means": "축은 안 움직여. 니가 잡을 건 축이야"
+   }
+  ],
+  "upright_summary": "바퀴가 위로 도는 구간입니다. 미루면 다음 바퀴까지 한참입니다.",
+  "reversed_summary": "지금은 타이밍이 아닙니다. 계획이 나쁜 게 아닙니다.",
+  "img": "10-wheel-of-fortune.png",
+  "imgPng": "10-wheel-of-fortune.png",
+  "webPath": "/img/tarot/10-wheel-of-fortune.png"
+ },
+ {
+  "id": 11,
+  "slug": "justice",
+  "ko": "정의",
+  "roman": "XI",
+  "en": "JUSTICE",
+  "keywords": "균형 · 정산 · 결론",
+  "symbol": "들어 올린 은빛 칼 · 손 위의 금 저울 · 얼굴 없는 은빛 가면 · 금빛 주름 치마 · 검은 옥좌 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "들어 올린 은빛 칼",
+    "means": "자르는 칼이야. 붙이는 게 아니라"
+   },
+   {
+    "part": "손 위의 금 저울",
+    "means": "기운 쪽이 있어. 그쪽부터 봐야 해"
+   },
+   {
+    "part": "얼굴 없는 은빛 가면",
+    "means": "누구 편도 아니야. 니 편도 아니고"
+   },
+   {
+    "part": "금빛 주름 치마",
+    "means": "무거워. 결정에는 무게가 붙어"
+   },
+   {
+    "part": "검은 옥좌",
+    "means": "앉아서 재는 자리야. 뛰는 자리가 아니라"
+   }
+  ],
+  "upright_summary": "뿌린 대로 거두는 정산의 구간입니다. 적으면 답이 나옵니다.",
+  "reversed_summary": "저울이 한쪽으로 기울어 있습니다. 균형이 맞을 때까지 보류하세요.",
+  "img": "11-justice.png",
+  "imgPng": "11-justice.png",
+  "webPath": "/img/tarot/11-justice.png"
+ },
+ {
+  "id": 12,
+  "slug": "hanged-man",
+  "ko": "매달린 사람",
+  "roman": "XII",
+  "en": "THE HANGED MAN",
+  "keywords": "관점 전환 · 보류 · 희생",
+  "symbol": "한 발이 금줄에 묶임 · 팔짱 낀 팔 · 머리 아래 빛나는 원 · 바꾼 다리 모양 · 위에서 흘러내리는 금 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "한 발이 금줄에 묶임",
+    "means": "걸린 게 한 발이야. 다른 발은 자유로워"
+   },
+   {
+    "part": "팔짱 낀 팔",
+    "means": "묶인 게 아니라 스스로 낀 거야. 안 풀고 있는 거"
+   },
+   {
+    "part": "머리 아래 빛나는 원",
+    "means": "거꾸로 있으니까 보이는 빛이야. 바로 서면 안 보여"
+   },
+   {
+    "part": "바꾼 다리 모양",
+    "means": "다리가 4자야. 불편한 자세를 유지하고 있어"
+   },
+   {
+    "part": "위에서 흘러내리는 금",
+    "means": "매달려 있는데 뭔가는 내려와. 헛된 자리가 아니야"
+   }
+  ],
+  "upright_summary": "뒤집어 보면 풀립니다. 멈춘 것은 후퇴가 아닙니다.",
+  "reversed_summary": "보류가 전략이 아니라 정체가 됐습니다. 기한을 정하세요.",
+  "img": "12-hanged-man.png",
+  "imgPng": "12-hanged-man.png",
+  "webPath": "/img/tarot/12-hanged-man.png"
+ },
+ {
+  "id": 13,
+  "slug": "death",
+  "ko": "죽음",
+  "roman": "XIII",
+  "en": "DEATH",
+  "keywords": "끝 · 리셋 · 재탄생",
+  "symbol": "든 낫 · 왕관 쓴 해골 · 은빛 강철 말 · 하늘의 검은 태양 · 바닥의 해골들 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "든 낫",
+    "means": "베는 도구야. 미련 없이 한 번에"
+   },
+   {
+    "part": "왕관 쓴 해골",
+    "means": "죽음도 왕이야. 피할 수 있는 상대가 아니야"
+   },
+   {
+    "part": "은빛 강철 말",
+    "means": "멈추지 않아. 부탁해도 안 서"
+   },
+   {
+    "part": "하늘의 검은 태양",
+    "means": "빛이 가려진 때야. 근데 뒤에 태양은 있어"
+   },
+   {
+    "part": "바닥의 해골들",
+    "means": "먼저 지나간 것들. 니가 처음이 아니야"
+   }
+  ],
+  "upright_summary": "끝내는 카드입니다. 잃는 게 아니라 갈아끼우는 것입니다.",
+  "reversed_summary": "끝난 걸 아직 쥐고 있습니다. 미련이 아니라 습관인 경우가 많습니다.",
+  "img": "13-death.png",
+  "imgPng": "13-death.png",
+  "webPath": "/img/tarot/13-death.png"
+ },
+ {
+  "id": 14,
+  "slug": "temperance",
+  "ko": "절제",
+  "roman": "XIV",
+  "en": "TEMPERANCE",
+  "keywords": "조율 · 중용 · 회복",
+  "symbol": "두 잔 사이로 흐르는 금빛 물 · 한 발은 물에 한 발은 바위에 · 은빛과 금빛 날개 · 물에 비친 그림자 · 하늘의 해와 달 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "두 잔 사이로 흐르는 금빛 물",
+    "means": "위에서 아래로 흘러. 한 번에 안 쏟고"
+   },
+   {
+    "part": "한 발은 물에 한 발은 바위에",
+    "means": "두 군데 걸쳐 있어. 한쪽으로 안 기울어"
+   },
+   {
+    "part": "은빛과 금빛 날개",
+    "means": "양쪽이 달라도 같이 펴. 균형은 같은 게 아니라 맞춘 거"
+   },
+   {
+    "part": "물에 비친 그림자",
+    "means": "위랑 아래가 같이 있어. 겉만 보면 반만 보는 거"
+   },
+   {
+    "part": "하늘의 해와 달",
+    "means": "낮과 밤이 같이 떠 있어. 극단이 아니라 사이"
+   }
+  ],
+  "upright_summary": "극단이 아니라 배합입니다. 8할의 힘으로 꾸준히.",
+  "reversed_summary": "균형이 무너진 채 달리고 있습니다. 저울부터 다시 맞추세요.",
+  "img": "14-temperance.png",
+  "imgPng": "14-temperance.png",
+  "webPath": "/img/tarot/14-temperance.png"
+ },
+ {
+  "id": 15,
+  "slug": "devil",
+  "ko": "악마",
+  "roman": "XV",
+  "en": "THE DEVIL",
+  "keywords": "집착 · 유혹 · 사슬",
+  "symbol": "금이 흘러내리는 뿔 · 손에서 늘어진 금사슬 · 무릎 꿇은 두 사람 · 은빛 금속 몸 · 뒤의 폐허 성당 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "금이 흘러내리는 뿔",
+    "means": "달콤해. 그래서 사람들이 무릎 꿇어"
+   },
+   {
+    "part": "손에서 늘어진 금사슬",
+    "means": "묶여 있는데 사슬이 느슨해. 빠지려면 빠져"
+   },
+   {
+    "part": "무릎 꿇은 두 사람",
+    "means": "둘 다 고개를 들고 있어. 도망 안 가고 보고 있는 거"
+   },
+   {
+    "part": "은빛 금속 몸",
+    "means": "따뜻한 게 아니야. 차가운데 빛나"
+   },
+   {
+    "part": "뒤의 폐허 성당",
+    "means": "원래 신성했던 자리야. 무너진 거지 처음부터 그런 게 아니라"
+   }
+  ],
+  "upright_summary": "달콤한 만큼 수수료가 비싼 구간입니다. 계산하고 들어가세요.",
+  "reversed_summary": "사슬이 느슨해지는 중입니다. 해방 직전이 가장 흔들립니다.",
+  "img": "15-devil.png",
+  "imgPng": "15-devil.png",
+  "webPath": "/img/tarot/15-devil.png"
+ },
+ {
+  "id": 16,
+  "slug": "tower",
+  "ko": "탑",
+  "roman": "XVI",
+  "en": "THE TOWER",
+  "keywords": "붕괴 · 폭로 · 번개",
+  "symbol": "내리치는 번개 · 불타는 탑 꼭대기 · 흩어지는 금 파편 · 떨어지는 두 사람 · 검은 연기 구름 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "내리치는 번개",
+    "means": "예고 없이 와. 니 일정이랑 상관없어"
+   },
+   {
+    "part": "불타는 탑 꼭대기",
+    "means": "위부터 무너져. 제일 높은 데가 먼저"
+   },
+   {
+    "part": "흩어지는 금 파편",
+    "means": "부서진 것도 금이야. 다 잃는 게 아니야"
+   },
+   {
+    "part": "떨어지는 두 사람",
+    "means": "떨어지는 중이지 끝난 게 아니야. 바닥은 그림 밖에 있어"
+   },
+   {
+    "part": "검은 연기 구름",
+    "means": "당장은 안 보여. 연기 걷히면 남은 게 보여"
+   }
+  ],
+  "upright_summary": "무너질 것이 지금 무너집니다. 늦게 무너지는 것보다 낫습니다.",
+  "reversed_summary": "위기는 지나갔고 균열은 남았습니다. 페인트만 칠하면 다음엔 못 버팁니다.",
+  "img": "16-tower.png",
+  "imgPng": "16-tower.png",
+  "webPath": "/img/tarot/16-tower.png"
+ },
+ {
+  "id": 17,
+  "slug": "star",
+  "ko": "별",
+  "roman": "XVII",
+  "en": "THE STAR",
+  "keywords": "희망 · 회복 · 길잡이",
+  "symbol": "일곱 개의 금빛 별 · 호수에 붓는 금빛 물 · 땅에 붓는 은빛 물 · 무릎 꿇은 검은 몸 · 멀리 보이는 산 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "일곱 개의 금빛 별",
+    "means": "하나가 아니야. 근데 다 멀어"
+   },
+   {
+    "part": "호수에 붓는 금빛 물",
+    "means": "붓는데 호수는 안 넘쳐. 계속 부어도 돼"
+   },
+   {
+    "part": "땅에 붓는 은빛 물",
+    "means": "한 손은 물에 한 손은 땅에. 꿈이랑 현실 둘 다"
+   },
+   {
+    "part": "무릎 꿇은 검은 몸",
+    "means": "서 있는 게 아니라 무릎 꿇었어. 겸손하게 붓는 자리"
+   },
+   {
+    "part": "멀리 보이는 산",
+    "means": "가야 할 데는 저기야. 가깝지 않아"
+   }
+  ],
+  "upright_summary": "멀지만 별이 떠 있는 길입니다. 방향은 맞습니다.",
+  "reversed_summary": "희망은 전략이 아닙니다. 중간 목표가 없으면 방향을 트세요.",
+  "img": "17-star.png",
+  "imgPng": "17-star.png",
+  "webPath": "/img/tarot/17-star.png"
+ },
+ {
+  "id": 18,
+  "slug": "moon",
+  "ko": "달",
+  "roman": "XVIII",
+  "en": "THE MOON",
+  "keywords": "불안 · 착각 · 안갯길",
+  "symbol": "반은 은 반은 금인 달 · 달에서 흘러내리는 금 · 울부짖는 은빛 늑대 둘 · 바닥의 금빛 가재 · 검은 바다와 절벽 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "반은 은 반은 금인 달",
+    "means": "한 얼굴이 아니야. 보이는 쪽이 다가 아니야"
+   },
+   {
+    "part": "달에서 흘러내리는 금",
+    "means": "달빛이 녹아 내려. 착각하기 좋은 빛"
+   },
+   {
+    "part": "울부짖는 은빛 늑대 둘",
+    "means": "같은 달을 보고 둘이 울어. 니 안에도 둘이 있어"
+   },
+   {
+    "part": "바닥의 금빛 가재",
+    "means": "물 밑에서 올라오는 중이야. 아직 다 안 나왔어"
+   },
+   {
+    "part": "검은 바다와 절벽",
+    "means": "앞이 안 보여. 안개가 아니라 밤이라서"
+   }
+  ],
+  "upright_summary": "안개가 만든 그림자를 괴물로 읽는 중입니다. 확인 전엔 결론 금지.",
+  "reversed_summary": "안개가 걷힙니다. 실망스러운 사실이라도 모르는 것보다 낫습니다.",
+  "img": "18-moon.png",
+  "imgPng": "18-moon.png",
+  "webPath": "/img/tarot/18-moon.png"
+ },
+ {
+  "id": 19,
+  "slug": "sun",
+  "ko": "태양",
+  "roman": "XIX",
+  "en": "THE SUN",
+  "keywords": "성공 · 만천하 · 활력",
+  "symbol": "뒤의 거대한 금빛 태양 · 두 팔 벌린 검은 아이 · 사방으로 뻗은 빛줄기 · 검은 받침대 · 발밑의 검은 바위 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "뒤의 거대한 금빛 태양",
+    "means": "가려진 데가 없어. 다 보여"
+   },
+   {
+    "part": "두 팔 벌린 검은 아이",
+    "means": "숨기는 게 없는 자세야. 의심 안 하는 몸"
+   },
+   {
+    "part": "사방으로 뻗은 빛줄기",
+    "means": "한 방향이 아니야. 다 비춰"
+   },
+   {
+    "part": "검은 받침대",
+    "means": "받침이 검어. 밝은 건 위에 있어 아래가 아니라"
+   },
+   {
+    "part": "발밑의 검은 바위",
+    "means": "바닥은 어두워. 근데 위는 밝아"
+   }
+  ],
+  "upright_summary": "가장 밝은 신호입니다. 의심에 쓸 힘을 실행에 쓰세요.",
+  "reversed_summary": "가려진 절반은 사라진 게 아니라 이월된 겁니다.",
+  "img": "19-sun.png",
+  "imgPng": "19-sun.png",
+  "webPath": "/img/tarot/19-sun.png"
+ },
+ {
+  "id": 20,
+  "slug": "judgement",
+  "ko": "심판",
+  "roman": "XX",
+  "en": "JUDGEMENT",
+  "keywords": "부활 · 재회 · 결산",
+  "symbol": "나팔 부는 금빛 천사 · 관에서 일어나는 사람들 · 위로 뻗은 손들 · 갈라진 구름 사이 빛 · 금빛 날개 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "나팔 부는 금빛 천사",
+    "means": "부르는 소리야. 니가 낸 소리가 아니라 들리는 소리"
+   },
+   {
+    "part": "관에서 일어나는 사람들",
+    "means": "끝난 줄 알았던 게 일어나. 한 명이 아니야"
+   },
+   {
+    "part": "위로 뻗은 손들",
+    "means": "다들 위를 봐. 아래 안 봐"
+   },
+   {
+    "part": "갈라진 구름 사이 빛",
+    "means": "닫혔던 게 열려. 완전히는 아니고 틈"
+   },
+   {
+    "part": "금빛 날개",
+    "means": "내려온 거야. 올라간 게 아니라"
+   }
+  ],
+  "upright_summary": "접었던 것이 다시 돌아옵니다. 그때는 때가 아니었을 뿐입니다.",
+  "reversed_summary": "매몰 비용은 이미 낸 수업료입니다. 되돌리려는 시도가 제일 비쌉니다.",
+  "img": "20-judgement.png",
+  "imgPng": "20-judgement.png",
+  "webPath": "/img/tarot/20-judgement.png"
+ },
+ {
+  "id": 21,
+  "slug": "world",
+  "ko": "세계",
+  "roman": "XXI",
+  "en": "THE WORLD",
+  "keywords": "완성 · 대단원 · 새 무대",
+  "symbol": "꼬리를 문 뱀 고리 · 고리 안에서 춤추는 검은 몸 · 몸을 감은 은빛 띠 · 네 귀퉁이의 천사 · 독수리 · 황소 · 사자 · 뒤의 꽃무늬 우주 — 사장님 그림(검정·금·은) 기준으로 2026-09-25 다시 씀",
+  "symbolPoints": [
+   {
+    "part": "꼬리를 문 뱀 고리",
+    "means": "시작이 끝이고 끝이 시작이야. 한 바퀴 돈 거"
+   },
+   {
+    "part": "고리 안에서 춤추는 검은 몸",
+    "means": "갇힌 게 아니라 안에서 춤춰. 완성 안에서 자유로운 거"
+   },
+   {
+    "part": "몸을 감은 은빛 띠",
+    "means": "묶인 게 아니라 흐르는 거야"
+   },
+   {
+    "part": "네 귀퉁이의 천사 · 독수리 · 황소 · 사자",
+    "means": "네 방향이 다 있어. 빠진 데가 없어"
+   },
+   {
+    "part": "뒤의 꽃무늬 우주",
+    "means": "펼쳐진 거야. 접힌 게 아니라"
+   }
+  ],
+  "upright_summary": "완주가 눈앞입니다. 여기서 멈추는 것만이 유일한 실패입니다.",
+  "reversed_summary": "거의 다 왔는데 멈춰 있습니다. 마지막 한 걸음은 당신 몫입니다.",
+  "img": "21-world.png",
+  "imgPng": "21-world.png",
+  "webPath": "/img/tarot/21-world.png"
+ },
+ {
+  "id": 22,
+  "slug": "wands-ace",
+  "ko": "완드 에이스",
+  "roman": "",
+  "en": "ACE OF WANDS",
+  "keywords": "불씨 · 시작 · 의욕",
+  "symbol": "구름에서 나온 손 · 새싹 돋은 지팡이 · 떨어지는 잎 · 멀리 보이는 성 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "구름에서 나온 손",
+    "means": "밖에서 온 기회야. 니가 만든 게 아니라 온 거"
+   },
+   {
+    "part": "새싹 돋은 지팡이",
+    "means": "아직 나무가 아니야. 싹이야. 키우는 건 니 몫"
+   },
+   {
+    "part": "떨어지는 잎",
+    "means": "안 잡으면 떨어져. 오래 안 기다려 줘"
+   },
+   {
+    "part": "멀리 보이는 성",
+    "means": "끝 그림은 있어. 근데 지금은 첫 손이야"
+   }
+  ],
+  "upright_summary": "불씨가 들어온 카드입니다. 하고 싶은 마음이 먼저 왔습니다.",
+  "reversed_summary": "불씨는 있는데 안 붙습니다. 미루는 사이 식고 있습니다.",
+  "img": "22-wands-ace.png",
+  "imgPng": "22-wands-ace.png",
+  "webPath": "/img/tarot/22-wands-ace.png"
+ },
+ {
+  "id": 23,
+  "slug": "wands-2",
+  "ko": "완드 2",
+  "roman": "",
+  "en": "TWO OF WANDS",
+  "keywords": "계획 · 선택 · 바깥",
+  "symbol": "손에 든 지구본 · 성벽 위에 선 사람 · 지팡이 두 개 · 바다 너머 땅 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "손에 든 지구본",
+    "means": "세상이 손안에 있어. 근데 아직 안 나갔어"
+   },
+   {
+    "part": "성벽 위에 선 사람",
+    "means": "안전한 데서 밖을 봐. 나가는 건 다음"
+   },
+   {
+    "part": "지팡이 두 개",
+    "means": "하나는 잡고 하나는 세워 뒀어. 둘 중 하나야"
+   },
+   {
+    "part": "바다 너머 땅",
+    "means": "가고 싶은 데는 보여. 배는 아직 없어"
+   }
+  ],
+  "upright_summary": "그림은 그려졌습니다. 이제 성벽에서 내려올지 정할 차례입니다.",
+  "reversed_summary": "계획만 오래 붙들고 있습니다. 안 나가는 이유가 겁인지 보세요.",
+  "img": "23-wands-2.png",
+  "imgPng": "23-wands-2.png",
+  "webPath": "/img/tarot/23-wands-2.png"
+ },
+ {
+  "id": 24,
+  "slug": "wands-3",
+  "ko": "완드 3",
+  "roman": "",
+  "en": "THREE OF WANDS",
+  "keywords": "확장 · 기다림 · 항해",
+  "symbol": "바다를 보는 뒷모습 · 지팡이 세 개 · 멀리 가는 배 · 높은 언덕 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "바다를 보는 뒷모습",
+    "means": "이미 배를 띄웠어. 돌아오길 보는 중"
+   },
+   {
+    "part": "지팡이 세 개",
+    "means": "하나는 잡고 둘은 세웠어. 손 뗀 것도 있어"
+   },
+   {
+    "part": "멀리 가는 배",
+    "means": "니가 보낸 거야. 결과는 오는 중"
+   },
+   {
+    "part": "높은 언덕",
+    "means": "멀리 보이는 자리야. 발밑이 아니라 저 앞"
+   }
+  ],
+  "upright_summary": "보낸 것이 돌아오는 중입니다. 지금은 기다리는 자리가 맞습니다.",
+  "reversed_summary": "보낸 게 늦습니다. 기다림이 길어지면 계획을 다시 보세요.",
+  "img": "24-wands-3.png",
+  "imgPng": "24-wands-3.png",
+  "webPath": "/img/tarot/24-wands-3.png"
+ },
+ {
+  "id": 25,
+  "slug": "wands-4",
+  "ko": "완드 4",
+  "roman": "",
+  "en": "FOUR OF WANDS",
+  "keywords": "축하 · 자리 · 안정",
+  "symbol": "꽃으로 이은 지팡이 네 개 · 춤추는 두 사람 · 뒤의 성 · 꽃다발 든 손 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "꽃으로 이은 지팡이 네 개",
+    "means": "기둥이 섰어. 잠깐 쉬어도 안 무너져"
+   },
+   {
+    "part": "춤추는 두 사람",
+    "means": "혼자 이룬 게 아니야. 같이 기뻐할 사람이 있어"
+   },
+   {
+    "part": "뒤의 성",
+    "means": "돌아갈 데가 있어. 그래서 나갈 수 있는 거"
+   },
+   {
+    "part": "꽃다발 든 손",
+    "means": "축하받는 자리야. 받아도 돼"
+   }
+  ],
+  "upright_summary": "한 단계 끝난 카드입니다. 잠깐 멈추고 기뻐해도 됩니다.",
+  "reversed_summary": "쉴 자리가 없습니다. 이루긴 했는데 편하지가 않습니다.",
+  "img": "25-wands-4.png",
+  "imgPng": "25-wands-4.png",
+  "webPath": "/img/tarot/25-wands-4.png"
+ },
+ {
+  "id": 26,
+  "slug": "wands-5",
+  "ko": "완드 5",
+  "roman": "",
+  "en": "FIVE OF WANDS",
+  "keywords": "충돌 · 경쟁 · 소란",
+  "symbol": "지팡이 휘두르는 다섯 사람 · 부딪히는 지팡이 · 각자 다른 옷 · 맨땅 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "지팡이 휘두르는 다섯 사람",
+    "means": "다 자기 말만 해. 맞는 사람이 없는 게 아니라 듣는 사람이 없어"
+   },
+   {
+    "part": "부딪히는 지팡이",
+    "means": "다치는 싸움은 아니야. 시끄러운 싸움"
+   },
+   {
+    "part": "각자 다른 옷",
+    "means": "같은 편이 아니야. 근데 적도 아니야"
+   },
+   {
+    "part": "맨땅",
+    "means": "정리된 판이 아니야. 지금은 다 섞여 있어"
+   }
+  ],
+  "upright_summary": "부딪히는 카드입니다. 지는 싸움이 아니라 시끄러운 싸움입니다.",
+  "reversed_summary": "싸움을 피하고 있습니다. 조용한데 해결된 건 아닙니다.",
+  "img": "26-wands-5.png",
+  "imgPng": "26-wands-5.png",
+  "webPath": "/img/tarot/26-wands-5.png"
+ },
+ {
+  "id": 27,
+  "slug": "wands-6",
+  "ko": "완드 6",
+  "roman": "",
+  "en": "SIX OF WANDS",
+  "keywords": "승리 · 인정 · 행진",
+  "symbol": "월계관 쓴 사람 · 말 위에 앉은 자리 · 둘러싼 사람들 · 지팡이 끝의 월계관 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "월계관 쓴 사람",
+    "means": "이긴 표시야. 남이 씌워 준 거"
+   },
+   {
+    "part": "말 위에 앉은 자리",
+    "means": "올려다보이는 자리야. 지금은"
+   },
+   {
+    "part": "둘러싼 사람들",
+    "means": "보는 눈이 있어. 그래서 더 잘 보여"
+   },
+   {
+    "part": "지팡이 끝의 월계관",
+    "means": "들고 있는 것도 이긴 표시야. 두 번 이겼어"
+   }
+  ],
+  "upright_summary": "인정받는 카드입니다. 남 눈에 먼저 보이는 성과입니다.",
+  "reversed_summary": "이겼다고 생각했는데 아닙니다. 남이 안 알아주는 게 아니라 아직 안 끝난 겁니다.",
+  "img": "27-wands-6.png",
+  "imgPng": "27-wands-6.png",
+  "webPath": "/img/tarot/27-wands-6.png"
+ },
+ {
+  "id": 28,
+  "slug": "wands-7",
+  "ko": "완드 7",
+  "roman": "",
+  "en": "SEVEN OF WANDS",
+  "keywords": "방어 · 버티기 · 우위",
+  "symbol": "높은 데 선 사람 · 아래서 올라오는 지팡이 여섯 · 짝이 다른 신발 · 든 지팡이 하나 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "높은 데 선 사람",
+    "means": "위에 있어. 아래서 올라오는 걸 막는 중"
+   },
+   {
+    "part": "아래서 올라오는 지팡이 여섯",
+    "means": "혼자 여섯을 상대해. 근데 위야"
+   },
+   {
+    "part": "짝이 다른 신발",
+    "means": "급하게 나왔어. 준비 다 하고 선 게 아니야"
+   },
+   {
+    "part": "든 지팡이 하나",
+    "means": "무기는 하나야. 근데 자리가 무기야"
+   }
+  ],
+  "upright_summary": "지키는 카드입니다. 밀리는 게 아니라 위에서 버티는 중입니다.",
+  "reversed_summary": "버티다 지쳤습니다. 지킬 게 뭔지부터 다시 보세요.",
+  "img": "28-wands-7.png",
+  "imgPng": "28-wands-7.png",
+  "webPath": "/img/tarot/28-wands-7.png"
+ },
+ {
+  "id": 29,
+  "slug": "wands-8",
+  "ko": "완드 8",
+  "roman": "",
+  "en": "EIGHT OF WANDS",
+  "keywords": "속도 · 소식 · 급전개",
+  "symbol": "날아가는 지팡이 여덟 · 사람이 없는 그림 · 맑은 하늘 · 아래 강과 집 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "날아가는 지팡이 여덟",
+    "means": "한꺼번에 가. 하나씩이 아니야"
+   },
+   {
+    "part": "사람이 없는 그림",
+    "means": "손댈 게 없어. 이미 날아갔어"
+   },
+   {
+    "part": "맑은 하늘",
+    "means": "막는 게 없어. 그래서 빨라"
+   },
+   {
+    "part": "아래 강과 집",
+    "means": "땅에 닿을 데는 정해져 있어. 곧 닿아"
+   }
+  ],
+  "upright_summary": "빨라지는 카드입니다. 소식이든 일이든 한꺼번에 옵니다.",
+  "reversed_summary": "막혀 있습니다. 빨라야 할 게 안 움직이거나 너무 급합니다.",
+  "img": "29-wands-8.png",
+  "imgPng": "29-wands-8.png",
+  "webPath": "/img/tarot/29-wands-8.png"
+ },
+ {
+  "id": 30,
+  "slug": "wands-9",
+  "ko": "완드 9",
+  "roman": "",
+  "en": "NINE OF WANDS",
+  "keywords": "경계 · 마지막 힘 · 상처",
+  "symbol": "머리에 감은 붕대 · 꽉 쥔 지팡이 · 뒤에 세운 지팡이 여덟 · 뒤돌아보는 눈 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "머리에 감은 붕대",
+    "means": "이미 다쳤어. 근데 서 있어"
+   },
+   {
+    "part": "꽉 쥔 지팡이",
+    "means": "놓으면 쓰러질 것 같아서 쥔 거"
+   },
+   {
+    "part": "뒤에 세운 지팡이 여덟",
+    "means": "지나온 싸움이야. 다 버텼어"
+   },
+   {
+    "part": "뒤돌아보는 눈",
+    "means": "또 올까 봐 보는 거야. 경계 중"
+   }
+  ],
+  "upright_summary": "거의 다 왔습니다. 다쳤지만 서 있고, 마지막 하나가 남았습니다.",
+  "reversed_summary": "경계만 하다 지쳤습니다. 안 오는 걸 기다리며 힘을 쓰고 있습니다.",
+  "img": "30-wands-9.png",
+  "imgPng": "30-wands-9.png",
+  "webPath": "/img/tarot/30-wands-9.png"
+ },
+ {
+  "id": 31,
+  "slug": "wands-10",
+  "ko": "완드 10",
+  "roman": "",
+  "en": "TEN OF WANDS",
+  "keywords": "짐 · 과부하 · 마무리 직전",
+  "symbol": "지팡이 열 개 껴안은 사람 · 굽은 허리 · 가까운 집 · 혼자 걷는 길 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "지팡이 열 개 껴안은 사람",
+    "means": "다 들었어. 근데 앞이 안 보여"
+   },
+   {
+    "part": "굽은 허리",
+    "means": "무게가 보여. 남은 안 보이는데 몸은 알아"
+   },
+   {
+    "part": "가까운 집",
+    "means": "다 왔어. 그래서 못 놓는 거"
+   },
+   {
+    "part": "혼자 걷는 길",
+    "means": "나눠 들 사람이 없는 게 아니라 안 나눈 거"
+   }
+  ],
+  "upright_summary": "다 들고 가는 카드입니다. 거의 다 왔는데 무게가 앞을 가립니다.",
+  "reversed_summary": "내려놓을 때입니다. 다 들 필요가 없는 걸 다 들고 있습니다.",
+  "img": "31-wands-10.png",
+  "imgPng": "31-wands-10.png",
+  "webPath": "/img/tarot/31-wands-10.png"
+ },
+ {
+  "id": 32,
+  "slug": "wands-page",
+  "ko": "완드 페이지",
+  "roman": "",
+  "en": "PAGE OF WANDS",
+  "keywords": "소식 · 호기심 · 시작 전",
+  "symbol": "지팡이를 올려다보는 눈 · 새싹 난 지팡이 · 사막 배경 · 모자의 깃털 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "지팡이를 올려다보는 눈",
+    "means": "뭐가 될지 보는 중이야. 아직 안 잡았어"
+   },
+   {
+    "part": "새싹 난 지팡이",
+    "means": "가능성이야. 결과 아니야"
+   },
+   {
+    "part": "사막 배경",
+    "means": "아직 아무것도 없는 데야. 그래서 뭐든 될 수 있어"
+   },
+   {
+    "part": "모자의 깃털",
+    "means": "가볍게 움직이는 표시야. 무겁지 않아"
+   }
+  ],
+  "upright_summary": "소식이 오는 카드입니다. 작은 시작이 먼저 옵니다.",
+  "reversed_summary": "소식은 없고 마음만 급합니다. 시작할 게 아직 안 왔습니다.",
+  "img": "32-wands-page.png",
+  "imgPng": "32-wands-page.png",
+  "webPath": "/img/tarot/32-wands-page.png"
+ },
+ {
+  "id": 33,
+  "slug": "wands-knight",
+  "ko": "완드 나이트",
+  "roman": "",
+  "en": "KNIGHT OF WANDS",
+  "keywords": "돌진 · 열정 · 성급",
+  "symbol": "앞발 든 말 · 펄럭이는 옷 · 든 지팡이 · 사막 배경 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "앞발 든 말",
+    "means": "멈출 생각이 없어. 이미 뛰는 중"
+   },
+   {
+    "part": "펄럭이는 옷",
+    "means": "바람이 아니라 속도야"
+   },
+   {
+    "part": "든 지팡이",
+    "means": "목표는 하나야. 옆은 안 봐"
+   },
+   {
+    "part": "사막 배경",
+    "means": "어디로 가는지보다 간다는 게 먼저야"
+   }
+  ],
+  "upright_summary": "뛰는 카드입니다. 재지 않고 가는 힘이 지금은 맞습니다.",
+  "reversed_summary": "급합니다. 뛰는데 방향이 없거나 도중에 식습니다.",
+  "img": "33-wands-knight.png",
+  "imgPng": "33-wands-knight.png",
+  "webPath": "/img/tarot/33-wands-knight.png"
+ },
+ {
+  "id": 34,
+  "slug": "wands-queen",
+  "ko": "완드 퀸",
+  "roman": "",
+  "en": "QUEEN OF WANDS",
+  "keywords": "자신감 · 매력 · 주도",
+  "symbol": "해바라기 든 손 · 발밑의 검은 고양이 · 벌린 무릎 · 사자 무늬 의자 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "해바라기 든 손",
+    "means": "밝은 쪽을 보고 있어. 숨기는 게 없어"
+   },
+   {
+    "part": "발밑의 검은 고양이",
+    "means": "밝기만 한 게 아니야. 눈치도 빨라"
+   },
+   {
+    "part": "벌린 무릎",
+    "means": "당당한 자세야. 눈치 안 봐"
+   },
+   {
+    "part": "사자 무늬 의자",
+    "means": "자기 자리야. 남이 준 게 아니라"
+   }
+  ],
+  "upright_summary": "당당한 카드입니다. 숨기지 않을 때 더 잘 되는 자리입니다.",
+  "reversed_summary": "자신감이 흔들립니다. 남 눈치가 앞서서 내 자리가 작아집니다.",
+  "img": "34-wands-queen.png",
+  "imgPng": "34-wands-queen.png",
+  "webPath": "/img/tarot/34-wands-queen.png"
+ },
+ {
+  "id": 35,
+  "slug": "wands-king",
+  "ko": "완드 킹",
+  "roman": "",
+  "en": "KING OF WANDS",
+  "keywords": "리더 · 책임 · 추진",
+  "symbol": "앞을 보는 옆얼굴 · 세운 지팡이 · 발밑의 도마뱀 · 사자와 도마뱀 무늬 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "앞을 보는 옆얼굴",
+    "means": "남이 아니라 앞을 봐. 자기 방향이 있어"
+   },
+   {
+    "part": "세운 지팡이",
+    "means": "힘을 휘두르지 않고 세워 뒀어. 그게 리더야"
+   },
+   {
+    "part": "발밑의 도마뱀",
+    "means": "작은 것도 봐. 큰 그림만 보는 게 아니야"
+   },
+   {
+    "part": "사자와 도마뱀 무늬",
+    "means": "불의 힘이야. 태우는 게 아니라 데우는 거"
+   }
+  ],
+  "upright_summary": "이끄는 카드입니다. 정해서 밀고 가면 따라옵니다.",
+  "reversed_summary": "밀어붙이기만 합니다. 이끄는 게 아니라 끌고 가는 중입니다.",
+  "img": "35-wands-king.png",
+  "imgPng": "35-wands-king.png",
+  "webPath": "/img/tarot/35-wands-king.png"
+ },
+ {
+  "id": 36,
+  "slug": "cups-ace",
+  "ko": "컵 에이스",
+  "roman": "",
+  "en": "ACE OF CUPS",
+  "keywords": "마음 · 시작 · 넘침",
+  "symbol": "구름에서 나온 손 · 넘치는 잔 · 내려오는 비둘기 · 아래 연꽃 연못 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "구름에서 나온 손",
+    "means": "마음이 밖에서 왔어. 니가 만든 게 아니야"
+   },
+   {
+    "part": "넘치는 잔",
+    "means": "채워서 넘쳐. 부족해서 온 게 아니야"
+   },
+   {
+    "part": "내려오는 비둘기",
+    "means": "위에서 내려온 거야. 계산 없이"
+   },
+   {
+    "part": "아래 연꽃 연못",
+    "means": "받을 자리는 이미 있어"
+   }
+  ],
+  "upright_summary": "마음이 들어오는 카드입니다. 계산 없이 온 감정이 먼저입니다.",
+  "reversed_summary": "마음이 안 찹니다. 받을 자리가 막혔거나 흘리고 있습니다.",
+  "img": "36-cups-ace.png",
+  "imgPng": "36-cups-ace.png",
+  "webPath": "/img/tarot/36-cups-ace.png"
+ },
+ {
+  "id": 37,
+  "slug": "cups-2",
+  "ko": "컵 2",
+  "roman": "",
+  "en": "TWO OF CUPS",
+  "keywords": "둘 · 마음 맞음 · 약속",
+  "symbol": "잔을 맞대는 두 사람 · 위의 날개 달린 사자 · 감긴 뱀 두 마리 · 같은 높이의 눈 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "잔을 맞대는 두 사람",
+    "means": "한쪽이 아니야. 둘 다 내밀었어"
+   },
+   {
+    "part": "위의 날개 달린 사자",
+    "means": "둘이 만나면 생기는 힘이야. 혼자엔 없어"
+   },
+   {
+    "part": "감긴 뱀 두 마리",
+    "means": "서로 얽혀. 한쪽만 풀 수 없어"
+   },
+   {
+    "part": "같은 높이의 눈",
+    "means": "위아래가 아니야. 같은 자리"
+   }
+  ],
+  "upright_summary": "마음이 맞는 카드입니다. 한쪽이 아니라 둘 다 내밀고 있습니다.",
+  "reversed_summary": "한쪽만 내밀고 있습니다. 맞는 줄 알았는데 높이가 다릅니다.",
+  "img": "37-cups-2.png",
+  "imgPng": "37-cups-2.png",
+  "webPath": "/img/tarot/37-cups-2.png"
+ },
+ {
+  "id": 38,
+  "slug": "cups-3",
+  "ko": "컵 3",
+  "roman": "",
+  "en": "THREE OF CUPS",
+  "keywords": "축하 · 친구 · 어울림",
+  "symbol": "잔 든 세 사람 · 춤추는 발 · 발밑의 과일 · 서로 다른 옷 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "잔 든 세 사람",
+    "means": "둘이 아니라 셋이야. 연애가 아니라 어울림"
+   },
+   {
+    "part": "춤추는 발",
+    "means": "기뻐서 움직여. 앉아 있는 자리가 아니야"
+   },
+   {
+    "part": "발밑의 과일",
+    "means": "거둔 게 있어. 그래서 잔치야"
+   },
+   {
+    "part": "서로 다른 옷",
+    "means": "같은 사람들이 아니야. 근데 같이 있어"
+   }
+  ],
+  "upright_summary": "같이 기뻐하는 카드입니다. 혼자보다 여럿이 잘 되는 자리입니다.",
+  "reversed_summary": "어울리는데 비어 있습니다. 사람은 많은데 내 편이 없습니다.",
+  "img": "38-cups-3.png",
+  "imgPng": "38-cups-3.png",
+  "webPath": "/img/tarot/38-cups-3.png"
+ },
+ {
+  "id": 39,
+  "slug": "cups-4",
+  "ko": "컵 4",
+  "roman": "",
+  "en": "FOUR OF CUPS",
+  "keywords": "권태 · 무관심 · 놓침",
+  "symbol": "나무 밑에 팔짱 낀 사람 · 구름에서 내미는 잔 · 앞에 놓인 잔 세 개 · 감은 눈 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "나무 밑에 팔짱 낀 사람",
+    "means": "안 받겠다는 자세야. 못 받는 게 아니라"
+   },
+   {
+    "part": "구름에서 내미는 잔",
+    "means": "새로 오는 게 있어. 근데 안 봐"
+   },
+   {
+    "part": "앞에 놓인 잔 세 개",
+    "means": "가진 걸 보고 있어. 지겨워진 것들"
+   },
+   {
+    "part": "감은 눈",
+    "means": "못 보는 게 아니라 안 보는 거"
+   }
+  ],
+  "upright_summary": "지루한 카드입니다. 오는 게 있는데 안 보고 있습니다.",
+  "reversed_summary": "눈을 뜨는 카드입니다. 지루함이 끝나고 새 걸 봅니다.",
+  "img": "39-cups-4.png",
+  "imgPng": "39-cups-4.png",
+  "webPath": "/img/tarot/39-cups-4.png"
+ },
+ {
+  "id": 40,
+  "slug": "cups-5",
+  "ko": "컵 5",
+  "roman": "",
+  "en": "FIVE OF CUPS",
+  "keywords": "상실 · 후회 · 남은 것",
+  "symbol": "엎어진 잔 세 개 · 뒤에 선 잔 두 개 · 검은 망토 · 멀리 보이는 다리 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "엎어진 잔 세 개",
+    "means": "쏟은 건 못 담아. 그건 맞아"
+   },
+   {
+    "part": "뒤에 선 잔 두 개",
+    "means": "안 쏟은 게 있어. 근데 등지고 있어"
+   },
+   {
+    "part": "검은 망토",
+    "means": "슬픔을 입고 있어. 벗을 수 있는 건데"
+   },
+   {
+    "part": "멀리 보이는 다리",
+    "means": "건너갈 길은 있어. 뒤돌면 보여"
+   }
+  ],
+  "upright_summary": "잃은 카드입니다. 쏟은 건 맞는데 남은 두 잔을 등지고 있습니다.",
+  "reversed_summary": "돌아서는 카드입니다. 남은 걸 보기 시작하면 다리가 보입니다.",
+  "img": "40-cups-5.png",
+  "imgPng": "40-cups-5.png",
+  "webPath": "/img/tarot/40-cups-5.png"
+ },
+ {
+  "id": 41,
+  "slug": "cups-6",
+  "ko": "컵 6",
+  "roman": "",
+  "en": "SIX OF CUPS",
+  "keywords": "추억 · 옛사람 · 순수",
+  "symbol": "꽃 든 잔 건네는 아이 · 받는 작은 아이 · 잔 속의 흰 꽃 · 뒤의 오래된 집 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "꽃 든 잔 건네는 아이",
+    "means": "계산 없는 마음이야. 어릴 때 식"
+   },
+   {
+    "part": "받는 작은 아이",
+    "means": "받는 게 자연스러웠던 때야"
+   },
+   {
+    "part": "잔 속의 흰 꽃",
+    "means": "옛날 걸 담은 잔이야. 지금 것 아니야"
+   },
+   {
+    "part": "뒤의 오래된 집",
+    "means": "익숙한 데야. 돌아가고 싶은"
+   }
+  ],
+  "upright_summary": "옛날이 오는 카드입니다. 옛사람이나 익숙한 마음이 돌아옵니다.",
+  "reversed_summary": "옛날에 묶여 있습니다. 지금을 안 보고 그때만 봅니다.",
+  "img": "41-cups-6.png",
+  "imgPng": "41-cups-6.png",
+  "webPath": "/img/tarot/41-cups-6.png"
+ },
+ {
+  "id": 42,
+  "slug": "cups-7",
+  "ko": "컵 7",
+  "roman": "",
+  "en": "SEVEN OF CUPS",
+  "keywords": "환상 · 선택 과잉 · 헛것",
+  "symbol": "구름 위 잔 일곱 개 · 잔마다 다른 것 · 검은 그림자 사람 · 천에 덮인 잔 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "구름 위 잔 일곱 개",
+    "means": "다 좋아 보여. 근데 구름 위야"
+   },
+   {
+    "part": "잔마다 다른 것",
+    "means": "보석 뱀 성 월계관 다 있어. 다 가질 순 없어"
+   },
+   {
+    "part": "검은 그림자 사람",
+    "means": "고르는 사람이 어두워. 뭘 원하는지 몰라"
+   },
+   {
+    "part": "천에 덮인 잔",
+    "means": "하나는 안 보여. 그게 진짜일 수도"
+   }
+  ],
+  "upright_summary": "고르는 카드입니다. 다 좋아 보이는데 구름 위입니다.",
+  "reversed_summary": "환상이 걷힙니다. 진짜 하나가 보이기 시작합니다.",
+  "img": "42-cups-7.png",
+  "imgPng": "42-cups-7.png",
+  "webPath": "/img/tarot/42-cups-7.png"
+ },
+ {
+  "id": 43,
+  "slug": "cups-8",
+  "ko": "컵 8",
+  "roman": "",
+  "en": "EIGHT OF CUPS",
+  "keywords": "떠남 · 놓음 · 찾아 나섬",
+  "symbol": "뒤돌아 걷는 사람 · 쌓인 잔 여덟 개 · 해와 달이 겹친 하늘 · 산으로 가는 길 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "뒤돌아 걷는 사람",
+    "means": "잔을 두고 가. 뺏긴 게 아니라 둔 거"
+   },
+   {
+    "part": "쌓인 잔 여덟 개",
+    "means": "다 있어. 근데 빈자리가 있어"
+   },
+   {
+    "part": "해와 달이 겹친 하늘",
+    "means": "밤에 떠나. 낮엔 못 떠나던 거"
+   },
+   {
+    "part": "산으로 가는 길",
+    "means": "올라가는 길이야. 편한 길 아니야"
+   }
+  ],
+  "upright_summary": "떠나는 카드입니다. 뺏긴 게 아니라 두고 가는 겁니다.",
+  "reversed_summary": "떠나야 하는데 못 떠납니다. 빈자리를 알면서 앉아 있습니다.",
+  "img": "43-cups-8.png",
+  "imgPng": "43-cups-8.png",
+  "webPath": "/img/tarot/43-cups-8.png"
+ },
+ {
+  "id": 44,
+  "slug": "cups-9",
+  "ko": "컵 9",
+  "roman": "",
+  "en": "NINE OF CUPS",
+  "keywords": "만족 · 소원 · 흡족",
+  "symbol": "팔짱 끼고 웃는 사람 · 뒤에 늘어선 잔 아홉 · 붉은 천 덮인 자리 · 빈 앞자리 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "팔짱 끼고 웃는 사람",
+    "means": "다 이뤄서 앉은 자세야. 방어가 아니라"
+   },
+   {
+    "part": "뒤에 늘어선 잔 아홉",
+    "means": "다 채웠어. 보여주려고 늘어놨어"
+   },
+   {
+    "part": "붉은 천 덮인 자리",
+    "means": "잘 차린 데야. 내 자리"
+   },
+   {
+    "part": "빈 앞자리",
+    "means": "혼자야. 나눌 사람은 안 보여"
+   }
+  ],
+  "upright_summary": "채워진 카드입니다. 바라던 게 손에 들어옵니다.",
+  "reversed_summary": "채웠는데 허합니다. 이룬 게 남한테 보여주는 용도였습니다.",
+  "img": "44-cups-9.png",
+  "imgPng": "44-cups-9.png",
+  "webPath": "/img/tarot/44-cups-9.png"
+ },
+ {
+  "id": 45,
+  "slug": "cups-10",
+  "ko": "컵 10",
+  "roman": "",
+  "en": "TEN OF CUPS",
+  "keywords": "가족 · 완성 · 무지개",
+  "symbol": "하늘의 무지개 · 팔 벌린 두 어른 · 춤추는 아이들 · 멀리 보이는 집 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "하늘의 무지개",
+    "means": "끝난 뒤에 뜨는 거야. 비 온 뒤"
+   },
+   {
+    "part": "팔 벌린 두 어른",
+    "means": "둘이 같이 봐. 한 방향"
+   },
+   {
+    "part": "춤추는 아이들",
+    "means": "편해서 노는 거야. 불안하면 못 놀아"
+   },
+   {
+    "part": "멀리 보이는 집",
+    "means": "돌아갈 데야. 크지 않아도"
+   }
+  ],
+  "upright_summary": "완성된 카드입니다. 크지 않아도 같이 보는 방향이 있습니다.",
+  "reversed_summary": "그림은 완벽한데 안이 다릅니다. 같이 있어도 방향이 갈립니다.",
+  "img": "45-cups-10.png",
+  "imgPng": "45-cups-10.png",
+  "webPath": "/img/tarot/45-cups-10.png"
+ },
+ {
+  "id": 46,
+  "slug": "cups-page",
+  "ko": "컵 페이지",
+  "roman": "",
+  "en": "PAGE OF CUPS",
+  "keywords": "감성 · 제안 · 물고기",
+  "symbol": "잔에서 나온 물고기 · 잔을 보는 눈 · 꽃무늬 옷 · 뒤의 잔잔한 바다 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "잔에서 나온 물고기",
+    "means": "엉뚱한 게 튀어나와. 근데 재밌어"
+   },
+   {
+    "part": "잔을 보는 눈",
+    "means": "놀라는 게 아니라 신기해하는 눈"
+   },
+   {
+    "part": "꽃무늬 옷",
+    "means": "감성이 겉에 나와 있어. 안 숨겨"
+   },
+   {
+    "part": "뒤의 잔잔한 바다",
+    "means": "마음이 잔잔해. 그래서 물고기가 보여"
+   }
+  ],
+  "upright_summary": "마음이 먼저 말하는 카드입니다. 작은 제안이나 감정이 옵니다.",
+  "reversed_summary": "감정이 어립니다. 마음은 큰데 말이 안 됩니다.",
+  "img": "46-cups-page.png",
+  "imgPng": "46-cups-page.png",
+  "webPath": "/img/tarot/46-cups-page.png"
+ },
+ {
+  "id": 47,
+  "slug": "cups-knight",
+  "ko": "컵 나이트",
+  "roman": "",
+  "en": "KNIGHT OF CUPS",
+  "keywords": "구애 · 낭만 · 천천히",
+  "symbol": "천천히 걷는 말 · 앞으로 내민 잔 · 날개 달린 투구 · 흐르는 강 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "천천히 걷는 말",
+    "means": "뛰지 않아. 잔이 안 쏟아지게"
+   },
+   {
+    "part": "앞으로 내민 잔",
+    "means": "주려고 가는 중이야. 받으러가 아니라"
+   },
+   {
+    "part": "날개 달린 투구",
+    "means": "생각이 앞서. 발은 느려"
+   },
+   {
+    "part": "흐르는 강",
+    "means": "따라가는 길이야. 거스르지 않아"
+   }
+  ],
+  "upright_summary": "다가오는 카드입니다. 천천히 오는데 방향은 분명합니다.",
+  "reversed_summary": "말만 낭만적입니다. 잔을 내밀고 안 옵니다.",
+  "img": "47-cups-knight.png",
+  "imgPng": "47-cups-knight.png",
+  "webPath": "/img/tarot/47-cups-knight.png"
+ },
+ {
+  "id": 48,
+  "slug": "cups-queen",
+  "ko": "컵 퀸",
+  "roman": "",
+  "en": "QUEEN OF CUPS",
+  "keywords": "공감 · 직관 · 품음",
+  "symbol": "뚜껑 덮인 잔 · 잔을 보는 눈 · 물가의 의자 · 조개 무늬 의자 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "뚜껑 덮인 잔",
+    "means": "마음을 담았어. 함부로 안 열어"
+   },
+   {
+    "part": "잔을 보는 눈",
+    "means": "남을 보는 게 아니라 자기 마음을 봐"
+   },
+   {
+    "part": "물가의 의자",
+    "means": "물에 발이 닿을 듯 말 듯. 빠지진 않아"
+   },
+   {
+    "part": "조개 무늬 의자",
+    "means": "품는 자리야. 자기 자리"
+   }
+  ],
+  "upright_summary": "품는 카드입니다. 남 마음이 먼저 보여서 먼저 압니다.",
+  "reversed_summary": "너무 품습니다. 남 마음에 빠져 내 마음을 잃습니다.",
+  "img": "48-cups-queen.png",
+  "imgPng": "48-cups-queen.png",
+  "webPath": "/img/tarot/48-cups-queen.png"
+ },
+ {
+  "id": 49,
+  "slug": "cups-king",
+  "ko": "컵 킹",
+  "roman": "",
+  "en": "KING OF CUPS",
+  "keywords": "포용 · 절제된 감정 · 물 위",
+  "symbol": "물 위에 뜬 의자 · 한 손의 잔 한 손의 홀 · 뒤의 뛰는 물고기 · 멀리 가는 배 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "물 위에 뜬 의자",
+    "means": "감정 위에 앉았어. 빠지지 않고"
+   },
+   {
+    "part": "한 손의 잔 한 손의 홀",
+    "means": "마음도 있고 권한도 있어"
+   },
+   {
+    "part": "뒤의 뛰는 물고기",
+    "means": "감정이 튀어도 앉아 있어"
+   },
+   {
+    "part": "멀리 가는 배",
+    "means": "남 일은 흘러가게 둬. 다 붙잡지 않아"
+   }
+  ],
+  "upright_summary": "감정을 다루는 카드입니다. 흔들려도 앉아 있는 힘입니다.",
+  "reversed_summary": "감정에 빠집니다. 앉아 있는 척하는데 발이 젖었습니다.",
+  "img": "49-cups-king.png",
+  "imgPng": "49-cups-king.png",
+  "webPath": "/img/tarot/49-cups-king.png"
+ },
+ {
+  "id": 50,
+  "slug": "swords-ace",
+  "ko": "소드 에이스",
+  "roman": "",
+  "en": "ACE OF SWORDS",
+  "keywords": "명확 · 결단 · 진실",
+  "symbol": "구름에서 나온 손의 검 · 검 끝의 왕관 · 월계수와 야자잎 · 아래 험한 산 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "구름에서 나온 손의 검",
+    "means": "생각이 위에서 왔어. 감정 아니야"
+   },
+   {
+    "part": "검 끝의 왕관",
+    "means": "이기는 생각이야. 근데 무거워"
+   },
+   {
+    "part": "월계수와 야자잎",
+    "means": "이겨도 평화가 따라와야 돼"
+   },
+   {
+    "part": "아래 험한 산",
+    "means": "검이 들어온 데는 험해. 그래서 검이 온 거"
+   }
+  ],
+  "upright_summary": "명확해지는 카드입니다. 감정이 아니라 생각으로 자릅니다.",
+  "reversed_summary": "잘못 자릅니다. 명확한 척하는데 칼이 엉뚱한 데 갑니다.",
+  "img": "50-swords-ace.png",
+  "imgPng": "50-swords-ace.png",
+  "webPath": "/img/tarot/50-swords-ace.png"
+ },
+ {
+  "id": 51,
+  "slug": "swords-2",
+  "ko": "소드 2",
+  "roman": "",
+  "en": "TWO OF SWORDS",
+  "keywords": "교착 · 회피 · 눈가림",
+  "symbol": "눈 가린 사람 · 교차한 검 두 개 · 뒤의 바다 · 초승달 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "눈 가린 사람",
+    "means": "안 보려고 가린 거야. 못 보는 게 아니라"
+   },
+   {
+    "part": "교차한 검 두 개",
+    "means": "둘 다 들고 있어. 하나도 못 내려"
+   },
+   {
+    "part": "뒤의 바다",
+    "means": "감정은 뒤에 있어. 등지고 앉았어"
+   },
+   {
+    "part": "초승달",
+    "means": "아직 차지 않았어. 결정할 때가 아닌 것도 맞아"
+   }
+  ],
+  "upright_summary": "멈춘 카드입니다. 둘 다 들고 있어서 하나도 못 놓습니다.",
+  "reversed_summary": "눈가리개가 벗겨집니다. 안 보던 걸 보면 하나가 내려갑니다.",
+  "img": "51-swords-2.png",
+  "imgPng": "51-swords-2.png",
+  "webPath": "/img/tarot/51-swords-2.png"
+ },
+ {
+  "id": 52,
+  "slug": "swords-3",
+  "ko": "소드 3",
+  "roman": "",
+  "en": "THREE OF SWORDS",
+  "keywords": "상처 · 이별 · 관통",
+  "symbol": "검 세 개 꽂힌 심장 · 비 내리는 하늘 · 회색 구름 · 빈 배경 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "검 세 개 꽂힌 심장",
+    "means": "정통으로 맞았어. 피할 수 없던 거"
+   },
+   {
+    "part": "비 내리는 하늘",
+    "means": "울어도 돼. 하늘도 울어"
+   },
+   {
+    "part": "회색 구름",
+    "means": "밝은 게 하나도 없어. 지금은"
+   },
+   {
+    "part": "빈 배경",
+    "means": "사람이 없어. 혼자 맞는 거"
+   }
+  ],
+  "upright_summary": "아픈 카드입니다. 피할 수 없는 상처를 정통으로 맞았습니다.",
+  "reversed_summary": "아픔이 빠집니다. 검이 빠지는 중이라 아직 아프지만 낫는 쪽입니다.",
+  "img": "52-swords-3.png",
+  "imgPng": "52-swords-3.png",
+  "webPath": "/img/tarot/52-swords-3.png"
+ },
+ {
+  "id": 53,
+  "slug": "swords-4",
+  "ko": "소드 4",
+  "roman": "",
+  "en": "FOUR OF SWORDS",
+  "keywords": "휴식 · 회복 · 멈춤",
+  "symbol": "누운 석상 · 벽의 검 세 개 · 아래 검 한 개 · 스테인드글라스 창 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "누운 석상",
+    "means": "쉬는 거야. 죽은 게 아니라"
+   },
+   {
+    "part": "벽의 검 세 개",
+    "means": "싸움은 벽에 걸어 뒀어. 잠깐"
+   },
+   {
+    "part": "아래 검 한 개",
+    "means": "하나는 옆에 둬. 완전히 놓은 건 아니야"
+   },
+   {
+    "part": "스테인드글라스 창",
+    "means": "빛은 들어와. 조용히"
+   }
+  ],
+  "upright_summary": "쉬는 카드입니다. 싸움을 벽에 걸고 잠깐 눕는 자리입니다.",
+  "reversed_summary": "일어날 때입니다. 쉬는 게 길어져 멈춤이 됐습니다.",
+  "img": "53-swords-4.png",
+  "imgPng": "53-swords-4.png",
+  "webPath": "/img/tarot/53-swords-4.png"
+ },
+ {
+  "id": 54,
+  "slug": "swords-5",
+  "ko": "소드 5",
+  "roman": "",
+  "en": "FIVE OF SWORDS",
+  "keywords": "패배 · 굴욕 · 남는 것",
+  "symbol": "검 세 개 든 사람 · 떠나는 두 사람 · 땅에 버려진 검 두 개 · 찢어진 구름 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "검 세 개 든 사람",
+    "means": "이겼어. 근데 웃는 얼굴이 이상해"
+   },
+   {
+    "part": "떠나는 두 사람",
+    "means": "졌어. 근데 떠나는 게 지는 건 아니야"
+   },
+   {
+    "part": "땅에 버려진 검 두 개",
+    "means": "이긴 쪽도 다 못 들어. 남긴 게 있어"
+   },
+   {
+    "part": "찢어진 구름",
+    "means": "이긴 자리인데 하늘이 안 맑아"
+   }
+  ],
+  "upright_summary": "이겨도 남는 게 없는 카드입니다. 지는 것보다 나은지 보세요.",
+  "reversed_summary": "싸움을 놓습니다. 이기려다 잃은 걸 보기 시작합니다.",
+  "img": "54-swords-5.png",
+  "imgPng": "54-swords-5.png",
+  "webPath": "/img/tarot/54-swords-5.png"
+ },
+ {
+  "id": 55,
+  "slug": "swords-6",
+  "ko": "소드 6",
+  "roman": "",
+  "en": "SIX OF SWORDS",
+  "keywords": "이동 · 건너감 · 잔잔",
+  "symbol": "배 탄 두 사람 · 배에 꽂힌 검 여섯 · 노 젓는 사람 · 잔잔해지는 물 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "배 탄 두 사람",
+    "means": "떠나는 중이야. 도착 아니야"
+   },
+   {
+    "part": "배에 꽂힌 검 여섯",
+    "means": "짐은 같이 가. 버리고 가는 게 아니라"
+   },
+   {
+    "part": "노 젓는 사람",
+    "means": "누가 도와줘. 혼자 가는 게 아니야"
+   },
+   {
+    "part": "잔잔해지는 물",
+    "means": "앞은 잔잔해. 뒤는 아니었지만"
+   }
+  ],
+  "upright_summary": "건너가는 카드입니다. 짐은 그대로인데 물이 잔잔해집니다.",
+  "reversed_summary": "못 건너갑니다. 떠나야 하는데 배가 안 움직입니다.",
+  "img": "55-swords-6.png",
+  "imgPng": "55-swords-6.png",
+  "webPath": "/img/tarot/55-swords-6.png"
+ },
+ {
+  "id": 56,
+  "slug": "swords-7",
+  "ko": "소드 7",
+  "roman": "",
+  "en": "SEVEN OF SWORDS",
+  "keywords": "꾀 · 몰래 · 빠져나감",
+  "symbol": "검 다섯 개 안고 가는 사람 · 뒤돌아보는 눈 · 남겨진 검 두 개 · 뒤의 천막들 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "검 다섯 개 안고 가는 사람",
+    "means": "들고 갈 수 있는 만큼만. 다는 못 들어"
+   },
+   {
+    "part": "뒤돌아보는 눈",
+    "means": "들킬까 봐 봐. 당당한 걸음이 아니야"
+   },
+   {
+    "part": "남겨진 검 두 개",
+    "means": "다 못 가져가. 흔적이 남아"
+   },
+   {
+    "part": "뒤의 천막들",
+    "means": "다들 딴 데 봐. 지금이 틈"
+   }
+  ],
+  "upright_summary": "꾀를 쓰는 카드입니다. 정면이 아니라 옆으로 빠져나갑니다.",
+  "reversed_summary": "들킵니다. 몰래 하던 게 드러나거나 스스로 털어놓습니다.",
+  "img": "56-swords-7.png",
+  "imgPng": "56-swords-7.png",
+  "webPath": "/img/tarot/56-swords-7.png"
+ },
+ {
+  "id": 57,
+  "slug": "swords-8",
+  "ko": "소드 8",
+  "roman": "",
+  "en": "EIGHT OF SWORDS",
+  "keywords": "묶임 · 자기 감옥 · 보이는데",
+  "symbol": "묶이고 눈 가린 사람 · 둘러싼 검 여덟 · 발밑의 물 · 멀리 보이는 성 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "묶이고 눈 가린 사람",
+    "means": "묶였어. 근데 느슨해"
+   },
+   {
+    "part": "둘러싼 검 여덟",
+    "means": "울타리야. 근데 앞은 열려 있어"
+   },
+   {
+    "part": "발밑의 물",
+    "means": "발은 자유야. 걸으면 돼"
+   },
+   {
+    "part": "멀리 보이는 성",
+    "means": "갈 데는 있어. 안 보여서 못 가는 거"
+   }
+  ],
+  "upright_summary": "묶인 카드입니다. 그런데 앞은 열려 있고 발은 자유입니다.",
+  "reversed_summary": "풀립니다. 묶은 게 남이 아니라 나였다는 걸 압니다.",
+  "img": "57-swords-8.png",
+  "imgPng": "57-swords-8.png",
+  "webPath": "/img/tarot/57-swords-8.png"
+ },
+ {
+  "id": 58,
+  "slug": "swords-9",
+  "ko": "소드 9",
+  "roman": "",
+  "en": "NINE OF SWORDS",
+  "keywords": "불안 · 밤 · 악몽",
+  "symbol": "침대에서 얼굴 감싼 사람 · 벽의 검 아홉 · 별자리 무늬 이불 · 검은 배경 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "침대에서 얼굴 감싼 사람",
+    "means": "밤이야. 낮엔 괜찮던 게 밤에 커져"
+   },
+   {
+    "part": "벽의 검 아홉",
+    "means": "위에 걸려 있어. 떨어지진 않아"
+   },
+   {
+    "part": "별자리 무늬 이불",
+    "means": "덮은 건 따뜻해. 근데 안 보여"
+   },
+   {
+    "part": "검은 배경",
+    "means": "밤이라 다 검어. 아침이면 다르게 보여"
+   }
+  ],
+  "upright_summary": "불안한 카드입니다. 밤에 커진 걱정이지 낮의 크기가 아닙니다.",
+  "reversed_summary": "밤이 끝납니다. 걱정이 걱정이었다는 걸 아침에 압니다.",
+  "img": "58-swords-9.png",
+  "imgPng": "58-swords-9.png",
+  "webPath": "/img/tarot/58-swords-9.png"
+ },
+ {
+  "id": 59,
+  "slug": "swords-10",
+  "ko": "소드 10",
+  "roman": "",
+  "en": "TEN OF SWORDS",
+  "keywords": "끝 · 바닥 · 새벽",
+  "symbol": "등에 검 열 개 꽂힌 사람 · 멀리 밝아오는 하늘 · 잔잔한 물 · 덮인 붉은 천 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "등에 검 열 개 꽂힌 사람",
+    "means": "다 끝났어. 더 꽂을 데도 없어"
+   },
+   {
+    "part": "멀리 밝아오는 하늘",
+    "means": "바닥 뒤에 새벽이 와. 순서가 그래"
+   },
+   {
+    "part": "잔잔한 물",
+    "means": "다 끝나서 조용해. 싸움이 없어"
+   },
+   {
+    "part": "덮인 붉은 천",
+    "means": "다 덮였어. 남은 게 없어서 편한 것도 있어"
+   }
+  ],
+  "upright_summary": "끝난 카드입니다. 바닥인데 그래서 더 내려갈 데가 없습니다.",
+  "reversed_summary": "일어납니다. 바닥을 쳤고 새벽 쪽으로 몸을 돌립니다.",
+  "img": "59-swords-10.png",
+  "imgPng": "59-swords-10.png",
+  "webPath": "/img/tarot/59-swords-10.png"
+ },
+ {
+  "id": 60,
+  "slug": "swords-page",
+  "ko": "소드 페이지",
+  "roman": "",
+  "en": "PAGE OF SWORDS",
+  "keywords": "경계 · 살핌 · 말 조심",
+  "symbol": "검 들고 뒤돌아보는 사람 · 바람에 날리는 머리 · 높은 언덕 · 날아가는 새들 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "검 들고 뒤돌아보는 사람",
+    "means": "경계 중이야. 뒤를 봐"
+   },
+   {
+    "part": "바람에 날리는 머리",
+    "means": "바람이 세. 말이 많이 오가"
+   },
+   {
+    "part": "높은 언덕",
+    "means": "보는 자리야. 싸우는 자리 아니고"
+   },
+   {
+    "part": "날아가는 새들",
+    "means": "소식이 오가. 다 믿진 마"
+   }
+  ],
+  "upright_summary": "살피는 카드입니다. 말이 많이 오가니 다 믿지 말고 보세요.",
+  "reversed_summary": "말이 앞섭니다. 살핀다고 하면서 소문을 만듭니다.",
+  "img": "60-swords-page.png",
+  "imgPng": "60-swords-page.png",
+  "webPath": "/img/tarot/60-swords-page.png"
+ },
+ {
+  "id": 61,
+  "slug": "swords-knight",
+  "ko": "소드 나이트",
+  "roman": "",
+  "en": "KNIGHT OF SWORDS",
+  "keywords": "돌격 · 직진 · 말이 칼",
+  "symbol": "달리는 말 · 앞으로 뻗은 검 · 거센 바람의 나무 · 찢어진 구름 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "달리는 말",
+    "means": "제일 빠른 말이야. 멈출 생각 없어"
+   },
+   {
+    "part": "앞으로 뻗은 검",
+    "means": "말보다 검이 먼저 나가"
+   },
+   {
+    "part": "거센 바람의 나무",
+    "means": "주변이 흔들려. 니가 흔드는 거"
+   },
+   {
+    "part": "찢어진 구름",
+    "means": "하늘도 갈라. 그만큼 세"
+   }
+  ],
+  "upright_summary": "직진하는 카드입니다. 빠르고 세지만 주변이 흔들립니다.",
+  "reversed_summary": "휘두르기만 합니다. 방향 없이 세기만 해서 다칩니다.",
+  "img": "61-swords-knight.png",
+  "imgPng": "61-swords-knight.png",
+  "webPath": "/img/tarot/61-swords-knight.png"
+ },
+ {
+  "id": 62,
+  "slug": "swords-queen",
+  "ko": "소드 퀸",
+  "roman": "",
+  "en": "QUEEN OF SWORDS",
+  "keywords": "냉철 · 혼자 · 자름",
+  "symbol": "앞으로 내민 손 · 똑바로 세운 검 · 구름 위의 의자 · 날아가는 새 한 마리 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "앞으로 내민 손",
+    "means": "오라는 손이야. 근데 검도 들었어"
+   },
+   {
+    "part": "똑바로 세운 검",
+    "means": "흔들림이 없어. 감정 안 섞여"
+   },
+   {
+    "part": "구름 위의 의자",
+    "means": "감정 위에 앉았어. 눈물은 지나갔어"
+   },
+   {
+    "part": "날아가는 새 한 마리",
+    "means": "혼자야. 근데 자유야"
+   }
+  ],
+  "upright_summary": "냉정한 카드입니다. 감정을 지나온 사람의 판단입니다.",
+  "reversed_summary": "차갑기만 합니다. 판단이 아니라 상처가 말을 합니다.",
+  "img": "62-swords-queen.png",
+  "imgPng": "62-swords-queen.png",
+  "webPath": "/img/tarot/62-swords-queen.png"
+ },
+ {
+  "id": 63,
+  "slug": "swords-king",
+  "ko": "소드 킹",
+  "roman": "",
+  "en": "KING OF SWORDS",
+  "keywords": "권위 · 판단 · 원칙",
+  "symbol": "정면을 보는 얼굴 · 세운 검 · 나비 무늬 의자 · 구름 낀 하늘 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "정면을 보는 얼굴",
+    "means": "피하지 않아. 똑바로 봐"
+   },
+   {
+    "part": "세운 검",
+    "means": "자를 수 있어. 근데 안 휘둘러"
+   },
+   {
+    "part": "나비 무늬 의자",
+    "means": "생각이 가벼운 게 아니라 날카로운 거"
+   },
+   {
+    "part": "구름 낀 하늘",
+    "means": "맑진 않아. 그래도 판단해"
+   }
+  ],
+  "upright_summary": "판단하는 카드입니다. 원칙으로 자르면 흔들리지 않습니다.",
+  "reversed_summary": "원칙이 무기가 됩니다. 판단이 아니라 통제가 됩니다.",
+  "img": "63-swords-king.png",
+  "imgPng": "63-swords-king.png",
+  "webPath": "/img/tarot/63-swords-king.png"
+ },
+ {
+  "id": 64,
+  "slug": "pentacles-ace",
+  "ko": "펜타클 에이스",
+  "roman": "",
+  "en": "ACE OF PENTACLES",
+  "keywords": "돈 · 기회 · 씨앗",
+  "symbol": "구름에서 나온 손의 동전 · 꽃으로 둘린 정원 · 열린 문 · 멀리 산 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "구름에서 나온 손의 동전",
+    "means": "현실적인 게 들어와. 마음이 아니라 손에"
+   },
+   {
+    "part": "꽃으로 둘린 정원",
+    "means": "받을 땅은 준비돼 있어"
+   },
+   {
+    "part": "열린 문",
+    "means": "정원 밖으로 길이 나 있어. 갇힌 게 아니야"
+   },
+   {
+    "part": "멀리 산",
+    "means": "가는 길은 길어. 근데 첫 동전은 손에"
+   }
+  ],
+  "upright_summary": "손에 잡히는 게 오는 카드입니다. 돈이든 자리든 실제로 옵니다.",
+  "reversed_summary": "잡힐 듯 안 잡힙니다. 온 줄 알았는데 손에 없습니다.",
+  "img": "64-pentacles-ace.png",
+  "imgPng": "64-pentacles-ace.png",
+  "webPath": "/img/tarot/64-pentacles-ace.png"
+ },
+ {
+  "id": 65,
+  "slug": "pentacles-2",
+  "ko": "펜타클 2",
+  "roman": "",
+  "en": "TWO OF PENTACLES",
+  "keywords": "균형 · 저글링 · 둘 다",
+  "symbol": "동전 두 개 굴리는 사람 · 무한대 끈 · 뒤의 출렁이는 배 · 춤추는 발 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "동전 두 개 굴리는 사람",
+    "means": "둘 다 들고 있어. 떨어뜨리진 않아"
+   },
+   {
+    "part": "무한대 끈",
+    "means": "계속 돌려. 끝나는 게 아니야"
+   },
+   {
+    "part": "뒤의 출렁이는 배",
+    "means": "밖은 흔들려. 그래도 굴려"
+   },
+   {
+    "part": "춤추는 발",
+    "means": "힘든 게 아니라 리듬이야. 지금은"
+   }
+  ],
+  "upright_summary": "둘 다 굴리는 카드입니다. 힘들어 보여도 아직 리듬입니다.",
+  "reversed_summary": "하나를 떨어뜨립니다. 둘 다 들 수 없는 때가 왔습니다.",
+  "img": "65-pentacles-2.png",
+  "imgPng": "65-pentacles-2.png",
+  "webPath": "/img/tarot/65-pentacles-2.png"
+ },
+ {
+  "id": 66,
+  "slug": "pentacles-3",
+  "ko": "펜타클 3",
+  "roman": "",
+  "en": "THREE OF PENTACLES",
+  "keywords": "협업 · 기술 · 인정",
+  "symbol": "성당에서 일하는 사람 · 설계도 든 두 사람 · 높은 자리의 작업 · 돌에 새긴 동전 세 개 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "성당에서 일하는 사람",
+    "means": "기술이 있어. 그래서 불렸어"
+   },
+   {
+    "part": "설계도 든 두 사람",
+    "means": "혼자 하는 일 아니야. 봐주는 사람이 있어"
+   },
+   {
+    "part": "높은 자리의 작업",
+    "means": "위에서 해. 아래서 올려다보는 자리"
+   },
+   {
+    "part": "돌에 새긴 동전 세 개",
+    "means": "남는 일이야. 하루짜리 아니고"
+   }
+  ],
+  "upright_summary": "같이 짓는 카드입니다. 기술이 인정받아 자리에 불립니다.",
+  "reversed_summary": "각자 놉니다. 같이 하는데 설계도가 다릅니다.",
+  "img": "66-pentacles-3.png",
+  "imgPng": "66-pentacles-3.png",
+  "webPath": "/img/tarot/66-pentacles-3.png"
+ },
+ {
+  "id": 67,
+  "slug": "pentacles-4",
+  "ko": "펜타클 4",
+  "roman": "",
+  "en": "FOUR OF PENTACLES",
+  "keywords": "움켜쥠 · 지킴 · 안 놓음",
+  "symbol": "동전 껴안은 사람 · 머리 위 동전 · 발밑 동전 두 개 · 뒤의 도시 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "동전 껴안은 사람",
+    "means": "안 뺏겨. 근데 못 써"
+   },
+   {
+    "part": "머리 위 동전",
+    "means": "생각도 돈이야. 딴 게 안 들어와"
+   },
+   {
+    "part": "발밑 동전 두 개",
+    "means": "발도 묶였어. 못 움직여"
+   },
+   {
+    "part": "뒤의 도시",
+    "means": "사람들은 뒤에 있어. 등졌어"
+   }
+  ],
+  "upright_summary": "쥐는 카드입니다. 안 뺏기지만 못 씁니다.",
+  "reversed_summary": "손을 폅니다. 쥐고 있던 걸 놓거나 뺏깁니다.",
+  "img": "67-pentacles-4.png",
+  "imgPng": "67-pentacles-4.png",
+  "webPath": "/img/tarot/67-pentacles-4.png"
+ },
+ {
+  "id": 68,
+  "slug": "pentacles-5",
+  "ko": "펜타클 5",
+  "roman": "",
+  "en": "FIVE OF PENTACLES",
+  "keywords": "결핍 · 추위 · 밖에서",
+  "symbol": "눈 속의 두 사람 · 밝은 창문 · 목발 · 창문 속 동전 다섯 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "눈 속의 두 사람",
+    "means": "춥고 없어. 지금은"
+   },
+   {
+    "part": "밝은 창문",
+    "means": "안은 따뜻해. 근데 안 들어가"
+   },
+   {
+    "part": "목발",
+    "means": "다쳤어. 그래도 걷는 중"
+   },
+   {
+    "part": "창문 속 동전 다섯",
+    "means": "도움은 안에 있어. 문을 안 두드려"
+   }
+  ],
+  "upright_summary": "부족한 카드입니다. 밖에 있는데 문은 안 두드리고 있습니다.",
+  "reversed_summary": "들어갑니다. 도움을 받기 시작하고 추위가 풀립니다.",
+  "img": "68-pentacles-5.png",
+  "imgPng": "68-pentacles-5.png",
+  "webPath": "/img/tarot/68-pentacles-5.png"
+ },
+ {
+  "id": 69,
+  "slug": "pentacles-6",
+  "ko": "펜타클 6",
+  "roman": "",
+  "en": "SIX OF PENTACLES",
+  "keywords": "나눔 · 주고받음 · 저울",
+  "symbol": "동전 주는 사람 · 한 손의 저울 · 무릎 꿇은 두 사람 · 받는 손 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "동전 주는 사람",
+    "means": "줄 수 있어. 여유가 있어서"
+   },
+   {
+    "part": "한 손의 저울",
+    "means": "막 주는 게 아니야. 재서 줘"
+   },
+   {
+    "part": "무릎 꿇은 두 사람",
+    "means": "받는 자리야. 위아래가 있어"
+   },
+   {
+    "part": "받는 손",
+    "means": "받는 것도 자리야. 부끄러운 게 아니라"
+   }
+  ],
+  "upright_summary": "주고받는 카드입니다. 주는 쪽인지 받는 쪽인지가 먼저입니다.",
+  "reversed_summary": "저울이 기웁니다. 주는데 돌아오지 않거나 받는데 빚이 됩니다.",
+  "img": "69-pentacles-6.png",
+  "imgPng": "69-pentacles-6.png",
+  "webPath": "/img/tarot/69-pentacles-6.png"
+ },
+ {
+  "id": 70,
+  "slug": "pentacles-7",
+  "ko": "펜타클 7",
+  "roman": "",
+  "en": "SEVEN OF PENTACLES",
+  "keywords": "기다림 · 수확 전 · 평가",
+  "symbol": "괭이에 기댄 사람 · 덩굴의 동전 일곱 · 고개 숙인 눈 · 발밑 동전 하나 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "괭이에 기댄 사람",
+    "means": "일은 했어. 이제 보는 중"
+   },
+   {
+    "part": "덩굴의 동전 일곱",
+    "means": "열렸어. 근데 아직 안 땄어"
+   },
+   {
+    "part": "고개 숙인 눈",
+    "means": "잘 됐나 보는 거야. 실망이 아니라"
+   },
+   {
+    "part": "발밑 동전 하나",
+    "means": "이미 딴 것도 있어. 다는 아니지만"
+   }
+  ],
+  "upright_summary": "기다리는 카드입니다. 심은 건 자라는 중이고 딸 때는 아닙니다.",
+  "reversed_summary": "기다림이 헛됩니다. 심은 데가 틀렸거나 너무 오래 봤습니다.",
+  "img": "70-pentacles-7.png",
+  "imgPng": "70-pentacles-7.png",
+  "webPath": "/img/tarot/70-pentacles-7.png"
+ },
+ {
+  "id": 71,
+  "slug": "pentacles-8",
+  "ko": "펜타클 8",
+  "roman": "",
+  "en": "EIGHT OF PENTACLES",
+  "keywords": "숙련 · 반복 · 손",
+  "symbol": "동전 새기는 사람 · 걸어 놓은 동전 여섯 · 고개 숙인 집중 · 멀리 도시 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "동전 새기는 사람",
+    "means": "하나씩 해. 한꺼번에 아니고"
+   },
+   {
+    "part": "걸어 놓은 동전 여섯",
+    "means": "한 게 쌓여. 보여"
+   },
+   {
+    "part": "고개 숙인 집중",
+    "means": "남 안 봐. 손만 봐"
+   },
+   {
+    "part": "멀리 도시",
+    "means": "세상은 저기 있어. 지금은 여기"
+   }
+  ],
+  "upright_summary": "손으로 쌓는 카드입니다. 하나씩 반복한 게 실력이 됩니다.",
+  "reversed_summary": "반복이 허탕입니다. 하는데 늘지 않거나 대충 합니다.",
+  "img": "71-pentacles-8.png",
+  "imgPng": "71-pentacles-8.png",
+  "webPath": "/img/tarot/71-pentacles-8.png"
+ },
+ {
+  "id": 72,
+  "slug": "pentacles-9",
+  "ko": "펜타클 9",
+  "roman": "",
+  "en": "NINE OF PENTACLES",
+  "keywords": "자립 · 풍요 · 혼자 정원",
+  "symbol": "정원의 여자 · 손 위의 매 · 포도 덩굴 · 동전 아홉 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "정원의 여자",
+    "means": "혼자야. 근데 부족한 게 없어"
+   },
+   {
+    "part": "손 위의 매",
+    "means": "길들인 거야. 야생이 아니라"
+   },
+   {
+    "part": "포도 덩굴",
+    "means": "익었어. 시간이 걸린 거"
+   },
+   {
+    "part": "동전 아홉",
+    "means": "쌓았어. 남이 준 게 아니라"
+   }
+  ],
+  "upright_summary": "혼자 이룬 카드입니다. 남 없이도 정원이 찼습니다.",
+  "reversed_summary": "혼자가 외롭습니다. 정원은 찼는데 문이 닫혀 있습니다.",
+  "img": "72-pentacles-9.png",
+  "imgPng": "72-pentacles-9.png",
+  "webPath": "/img/tarot/72-pentacles-9.png"
+ },
+ {
+  "id": 73,
+  "slug": "pentacles-10",
+  "ko": "펜타클 10",
+  "roman": "",
+  "en": "TEN OF PENTACLES",
+  "keywords": "유산 · 집안 · 오래 감",
+  "symbol": "세 세대의 사람들 · 개 두 마리 · 동전 열 개 · 아치문 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "세 세대의 사람들",
+    "means": "한 세대 일이 아니야. 이어져"
+   },
+   {
+    "part": "개 두 마리",
+    "means": "집 지키는 것들이야. 오래된 집"
+   },
+   {
+    "part": "동전 열 개",
+    "means": "다 찼어. 더 안 들어가도 돼"
+   },
+   {
+    "part": "아치문",
+    "means": "드나드는 문이야. 갇힌 집이 아니라"
+   }
+  ],
+  "upright_summary": "오래 가는 카드입니다. 한 세대 일이 아니라 이어지는 자리입니다.",
+  "reversed_summary": "집안이 무겁습니다. 이어지는 게 짐이 됩니다.",
+  "img": "73-pentacles-10.png",
+  "imgPng": "73-pentacles-10.png",
+  "webPath": "/img/tarot/73-pentacles-10.png"
+ },
+ {
+  "id": 74,
+  "slug": "pentacles-page",
+  "ko": "펜타클 페이지",
+  "roman": "",
+  "en": "PAGE OF PENTACLES",
+  "keywords": "공부 · 시작 · 동전 보는 눈",
+  "symbol": "동전 들어 보는 사람 · 푸른 들판 · 천천히 걷는 발 · 멀리 산 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "동전 들어 보는 사람",
+    "means": "신기해서 봐. 아직 쓸 줄 몰라"
+   },
+   {
+    "part": "푸른 들판",
+    "means": "자랄 데야. 아직 안 심었어"
+   },
+   {
+    "part": "천천히 걷는 발",
+    "means": "급하지 않아. 배우는 중"
+   },
+   {
+    "part": "멀리 산",
+    "means": "갈 길 멀어. 근데 첫 걸음이야"
+   }
+  ],
+  "upright_summary": "배우는 카드입니다. 작게 시작해서 손에 익히는 자리입니다.",
+  "reversed_summary": "배우다 맙니다. 시작은 하는데 손에 안 남습니다.",
+  "img": "74-pentacles-page.png",
+  "imgPng": "74-pentacles-page.png",
+  "webPath": "/img/tarot/74-pentacles-page.png"
+ },
+ {
+  "id": 75,
+  "slug": "pentacles-knight",
+  "ko": "펜타클 나이트",
+  "roman": "",
+  "en": "KNIGHT OF PENTACLES",
+  "keywords": "성실 · 느림 · 밭",
+  "symbol": "멈춘 말 · 든 동전 · 갈아 놓은 밭 · 무거운 갑옷 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "멈춘 말",
+    "means": "안 뛰어. 근데 안 물러서"
+   },
+   {
+    "part": "든 동전",
+    "means": "앞을 봐. 동전 보는 게 아니라"
+   },
+   {
+    "part": "갈아 놓은 밭",
+    "means": "일은 다 해 놨어. 이제 기다려"
+   },
+   {
+    "part": "무거운 갑옷",
+    "means": "느린 이유야. 근데 안 다쳐"
+   }
+  ],
+  "upright_summary": "느린 카드입니다. 뛰지 않지만 물러서지도 않습니다.",
+  "reversed_summary": "멈춥니다. 성실한 게 아니라 안 움직이는 겁니다.",
+  "img": "75-pentacles-knight.png",
+  "imgPng": "75-pentacles-knight.png",
+  "webPath": "/img/tarot/75-pentacles-knight.png"
+ },
+ {
+  "id": 76,
+  "slug": "pentacles-queen",
+  "ko": "펜타클 퀸",
+  "roman": "",
+  "en": "QUEEN OF PENTACLES",
+  "keywords": "돌봄 · 현실 · 품는 땅",
+  "symbol": "무릎 위의 동전 · 꽃과 덩굴의 의자 · 발밑의 토끼 · 고개 숙인 눈 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "무릎 위의 동전",
+    "means": "돈을 품어. 쥐는 게 아니라"
+   },
+   {
+    "part": "꽃과 덩굴의 의자",
+    "means": "풍성한 자리야. 자기가 가꾼"
+   },
+   {
+    "part": "발밑의 토끼",
+    "means": "작은 것도 살아. 여기선"
+   },
+   {
+    "part": "고개 숙인 눈",
+    "means": "동전을 보는 게 아니라 아끼는 거"
+   }
+  ],
+  "upright_summary": "돌보는 카드입니다. 돈이든 사람이든 품으면 자랍니다.",
+  "reversed_summary": "돌봄이 무겁습니다. 품다가 자기가 비었습니다.",
+  "img": "76-pentacles-queen.png",
+  "imgPng": "76-pentacles-queen.png",
+  "webPath": "/img/tarot/76-pentacles-queen.png"
+ },
+ {
+  "id": 77,
+  "slug": "pentacles-king",
+  "ko": "펜타클 킹",
+  "roman": "",
+  "en": "KING OF PENTACLES",
+  "keywords": "성공 · 소유 · 안정된 왕",
+  "symbol": "포도 무늬 옷 · 손 위의 동전 · 황소 무늬 의자 · 뒤의 성 — 이름으로만 맞춘 정통 그림 요소. 2026-09-25",
+  "symbolPoints": [
+   {
+    "part": "포도 무늬 옷",
+    "means": "이룬 게 몸에 붙었어. 빌린 게 아니야"
+   },
+   {
+    "part": "손 위의 동전",
+    "means": "들고 있어. 쥐는 게 아니라 얹어 놨어"
+   },
+   {
+    "part": "황소 무늬 의자",
+    "means": "안 움직여. 그게 힘이야"
+   },
+   {
+    "part": "뒤의 성",
+    "means": "쌓은 게 저기 있어. 다 보여"
+   }
+  ],
+  "upright_summary": "이룬 카드입니다. 쌓은 게 몸에 붙어 흔들리지 않습니다.",
+  "reversed_summary": "쌓은 게 독이 됩니다. 소유가 사람을 굳게 합니다.",
+  "img": "77-pentacles-king.png",
+  "imgPng": "77-pentacles-king.png",
+  "webPath": "/img/tarot/77-pentacles-king.png"
+ }
+]
