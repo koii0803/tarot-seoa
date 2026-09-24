@@ -361,9 +361,10 @@ def digest(who, text, ask_type, tense, day=None, llm_words=None, tone="반말", 
         "로마숫자": card["roman"],
         "방향": d["방향"],
         "열쇠말": card["keywords"],
-        "상징하나": (sym or {}).get("part", ""),      # 이 상징 말고 다른 그림 얘기는 못 쓴다
-        "상징뜻": (sym or {}).get("means", ""),
-        "상징전부": [p["part"] for p in (card.get("symbolPoints") or [])],
+        # 카드말이 있으면 그림 문장(보이는 것→상황)이 상징이다. 옛 상징(검정·금 그림)은 안 쓴다 (2026-09-26)
+        "상징하나": (_고정고르기(말["그림"], h, 12) if 말 else (sym or {}).get("part", "")),
+        "상징뜻": ("그림에 보이는 걸 말한 문장이다 그 결만 이어라 다른 그림 얘기는 하지 마라" if 말 else (sym or {}).get("means", "")),
+        "상징전부": (list(말["그림"]) if 말 else [p["part"] for p in (card.get("symbolPoints") or [])]),
         "한줄": (_고정고르기(말["뜻"], h, 20) if 말 else
                  (card["upright_summary"] if d["방향"] == "정방향" else card["reversed_summary"])),
         # 카드말 글감 (있는 카드만). 조립·풀이가 이걸 먼저 쓴다

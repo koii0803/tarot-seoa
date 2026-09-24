@@ -759,6 +759,9 @@ def 다듬기(글):
         줄들.pop(0)
     while 줄들 and not 줄들[-1].strip():
         줄들.pop()
+    # AI 가 draw_more 값을 글에 적어 보낸 적 있다 ("false" 한 줄. 2026-09-26 10턴 시늉). 그런 줄은 뗀다
+    while 줄들 and 줄들[-1].strip().lower() in ("true", "false", "null", "none"):
+        줄들.pop()
     # 2026-09-24 사장님 지시: 물음표만 남기고 부호를 전부 지운다
     return 부호치우기(chr(10).join(줄들).strip())
 
