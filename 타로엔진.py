@@ -304,8 +304,11 @@ def stop_check(text):
 # 5. 재료표 — 이 밖의 말은 풀이에 못 쓴다 (사주 봇의 facts_digest 자리)
 # ──────────────────────────────────────────────────────────────
 
-def digest(who, text, ask_type, tense, day=None, llm_words=None, tone="반말"):
-    """LLM 에게 넘길 재료 전부. 이게 유일한 입력이다. tone 은 "반말"(스레드) 또는 "존대"(사이트)."""
+def digest(who, text, ask_type, tense, day=None, llm_words=None, tone="반말", 고정=None):
+    """LLM 에게 넘길 재료 전부. 이게 유일한 입력이다. tone 은 "반말"(스레드) 또는 "존대"(사이트).
+
+    `고정=(슬러그, 방향)` 을 주면 **그 카드로 굳힌다** (2026-09-25). 4턴부터 앞 카드를 그대로
+    이어갈 때 쓴다. 상징·되물음은 who 씨앗으로 계속 달라진다."""
     if tone not in TONES:
         raise ValueError("말투가 아니다: %r (%s 중 하나)" % (tone, "·".join(TONES)))
     if ask_type not in ASK_TYPES:
@@ -314,6 +317,8 @@ def digest(who, text, ask_type, tense, day=None, llm_words=None, tone="반말"):
         raise ValueError("시제가 아니다: %r (%s 중 하나)" % (tense, "·".join(TENSES)))
 
     d = draw(who, day)
+    if 고정 and 고정[0] in BY_SLUG:
+        d["카드"], d["방향"] = BY_SLUG[고정[0]], (고정[1] if 고정[1] in DIRECTIONS else "정방향")
     card, h = d["카드"], d["seed"]
     sym = pick_symbol(card, h)
     q, qsrc = pick_question(card["slug"], ask_type, tense, h, tone)
