@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>마음의 별자리 - 감성 AI 타로</title>
+  
+  <!-- Pretendard Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            serif: ['GyeonggiBatang', 'Georgia', 'serif'],
+          },
+          colors: {
+            brand: {
+              50: '#F5F3FF',
+              100: '#EDE9FE',
+              200: '#DDD6FE',
+              500: '#8B5CF6',
+              600: '#7C3AED',
+              700: '#6D28D9',
+              gold: '#D4AF37',
+              dark: '#191F28',
+              sub: '#6B7684',
+              muted: '#8B95A1',
+            }
+          },
+          boxShadow: {
+            'soft': '0 8px 30px rgba(0, 0, 0, 0.04)',
+            'card': '0 16px 40px -12px rgba(124, 58, 237, 0.12)',
+            'glow': '0 0 25px rgba(139, 92, 246, 0.25)',
+            'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #F8F9FB;
+      color: #191F28;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Mesh */
+    .bg-mesh {
+      background: 
+        radial-gradient(circle at 15% 15%, rgba(237, 233, 254, 0.8) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(254, 243, 199, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 50% 75%, rgba(224, 231, 255, 0.6) 0%, transparent 50%),
+        #F8F9FB;
+    }
+
+    /* Glassmorphism Styles */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+
+    .glass-input {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Iridescent Badge Gradient */
+    .iridescent-badge {
+      background: linear-gradient(135deg, #E0E7FF 0%, #EDE9FE 50%, #FCE7F3 100%);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+    .iridescent-badge::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent, rgba(255,255,255,0.4), transparent);
+      transform: rotate(30deg);
+      animation: shimmer 4s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) rotate(30deg); }
+    }
+
+    /* 3D Card Flip & Perspective */
+    .perspective-container {
+      perspective: 1200px;
+    }
+    .tarot-card-inner {
+      transition: transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-style: preserve-3d;
+    }
+    .tarot-card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+    .tarot-card-face {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .tarot-card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Subtle Floating Keyframes */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(0.4deg); }
+    }
+    .animate-float {
+      animation: floatGentle 4.5s ease-in-out infinite;
+    }
+
+    /* Shimmering Gold Border */
+    .gold-foil {
+      border: 1px solid #E5C378;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.18), inset 0 0 10px rgba(212, 175, 55, 0.08);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-mesh flex justify-center items-start text-brand-dark selection:bg-brand-100 selection:text-brand-700">
+
+  <!-- Desktop Mobile Frame Container -->
+  <main class="w-full max-w-md min-h-screen flex flex-col justify-between relative px-5 py-4 pb-28 md:shadow-2xl md:my-6 md:min-h-[880px] md:rounded-[40px] md:border md:border-white/60 md:bg-mesh overflow-hidden">
+    
+    <!-- Ambient Light Orbs -->
+    <div class="pointer-events-none absolute -top-16 -left-16 w-56 h-56 bg-purple-200/50 rounded-full blur-3xl"></div>
+    <div class="pointer-events-none absolute top-1/3 -right-20 w-64 h-64 bg-amber-100/50 rounded-full blur-3xl"></div>
+    <div class="pointer-events-none absolute bottom-20 left-10 w-60 h-60 bg-blue-100/40 rounded-full blur-3xl"></div>
+
+    <!-- Top Navigation Header -->
+    <header class="w-full flex items-center justify-between z-20 pt-1">
+      <!-- Free Credit Badge -->
+      <div id="freeBadge" class="iridescent-badge px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm transition-all duration-300">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"></span>
+        <span class="text-xs font-semibold tracking-tight text-brand-700">FREE <span id="remainCount">3</span>회 남음</span>
+      </div>
+
+      <!-- Brand Minimal Title -->
+      <div class="flex items-center gap-1.5 opacity-90">
+        <svg class="w-4 h-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span class="text-xs font-semibold tracking-widest uppercase text-brand-sub">AI TAROT COUNSEL</span>
+      </div>
+
+      <!-- Action Button (Info / Reset) -->
+      <button id="btnInfo" aria-label="정보 안내" class="w-8 h-8 rounded-full glass-panel flex items-center justify-center text-brand-sub hover:text-brand-dark transition-colors active:scale-95">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </button>
+    </header>
+
+    <!-- 초기화면 — 대화가 시작되면 스르륵 접힌다 -->
+    <div id="introScreen" class="z-10 overflow-hidden">
+    <!-- Hero Header Section -->
+    <section class="text-center mt-6 mb-4 z-10">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 border border-brand-100 shadow-sm mb-3">
+        <svg class="w-3.5 h-3.5 text-brand-500 animate-spin" style="animation-duration: 6s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3v3m0 12v3M3 12h3m12 0h3m-2.6-6.4l-2.1 2.1m-6.4 6.4l-2.1 2.1m0-10.6l2.1 2.1m6.4 6.4l2.1 2.1"></path>
+        </svg>
+        <span class="text-[11px] font-medium tracking-wide text-brand-600">AI TAROT READER</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-[26px] font-bold text-brand-dark tracking-tight leading-snug">
+        마음이 머뭇거리는 순간
+      </h1>
+      <p class="text-sm text-brand-sub mt-2 leading-relaxed px-4">
+        복잡한 생각은 잠시 내려두고 한 줄로 남겨주세요.<br>
+        카드가 당신의 앞길에 다정한 빛을 비춰드립니다.
+      </p>
+    </section>
+
+    <!-- Quick Question Preset Cards Grid -->
+    <section class="grid grid-cols-3 gap-2.5 my-3 z-10">
+      <!-- Preset 1: Love -->
+      <button onclick="handleQuickSelect('이별 후 그 사람, 먼저 다시 연락해봐도 될까요?')" 
+              class="group glass-panel p-3.5 rounded-2xl flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-brand-200 active:scale-95">
+        <div class="w-9 h-9 rounded-xl bg-pink-50 flex items-center justify-center text-pink-500 mb-2 group-hover:scale-110 transition-transform">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <span class="text-xs font-semibold text-brand-dark group-hover:text-brand-600 transition-colors">이별 후 연락</span>
+        <span class="text-[10px] text-brand-muted mt-0.5">마음의 행방</span>
+      </button>
+
+      <!-- Preset 2: Career -->
+      <button onclick="handleQuickSelect('지금 다니는 회사, 이직이나 퇴사를 고민해도 될까요?')" 
+              class="group glass-panel p-3.5 rounded-2xl flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-brand-200 active:scale-95">
+        <div class="w-9 h-9 rounded-xl bg-violet-50 flex items-center justify-center text-brand-600 mb-2 group-hover:scale-110 transition-transform">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"></path>
+            <path d="M2 20h20"></path>
+            <path d="M14 12v.01"></path>
+          </svg>
+        </div>
+        <span class="text-xs font-semibold text-brand-dark group-hover:text-brand-600 transition-colors">퇴사 & 이직</span>
+        <span class="text-[10px] text-brand-muted mt-0.5">새로운 길 찾기</span>
+      </button>
+
+      <!-- Preset 3: Wealth -->
+      <button onclick="handleQuickSelect('요즘 돈이 모이지 않는데, 재물운의 흐름이 언제 풀릴까요?')" 
+              class="group glass-panel p-3.5 rounded-2xl flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-brand-200 active:scale-95">
+        <div class="w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-2 group-hover:scale-110 transition-transform">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="8" r="6"></circle>
+            <path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path>
+            <path d="M7 6h2"></path>
+            <path d="M8 5v2"></path>
+          </svg>
+        </div>
+        <span class="text-xs font-semibold text-brand-dark group-hover:text-brand-600 transition-colors">재물과 통장</span>
+        <span class="text-[10px] text-brand-muted mt-0.5">운의 흐름</span>
+      </button>
+    </section>
+
+    <!-- Center Interactive Tarot Card Area -->
+    <div class="perspective-container my-3 flex justify-center items-center z-10 py-1">
+      <div id="cardDeck" class="relative w-[190px] h-[310px] cursor-pointer group" onclick="toggleCardDirectly()">
+        
+        <!-- Glowing card shadow -->
+        <div class="absolute inset-0 bg-brand-500/15 rounded-2xl blur-xl group-hover:bg-brand-500/25 transition-all duration-500 transform scale-95"></div>
+
+        <!-- 3D Card Inner (Card Back / Card Front) -->
+        <div id="tarotCard" class="tarot-card-inner w-full h-full relative rounded-2xl shadow-card transition-all duration-500 animate-float">
+          
+          <!-- Card Front: Sacred Geometry (Waiting State) -->
+          <div class="tarot-card-face absolute inset-0 w-full h-full rounded-2xl p-2.5 bg-gradient-to-b from-[#2B2353] via-[#1E173D] to-[#120D29] text-white flex flex-col justify-between border border-white/20 overflow-hidden">
+            <!-- Ornate Corner Motifs -->
+            <div class="flex justify-between items-center text-[10px] text-amber-300/70 tracking-widest font-mono">
+              <span>✦ VII</span>
+              <span>✦</span>
+            </div>
+            
+            <!-- Mystic Geometric Center -->
+            <div class="flex flex-col items-center justify-center my-auto relative">
+              <div class="w-28 h-28 rounded-full border border-amber-300/30 flex items-center justify-center relative">
+                <div class="w-20 h-20 rounded-full border border-dashed border-amber-300/40 animate-spin" style="animation-duration: 25s;"></div>
+                <div class="w-14 h-14 rounded-full border border-purple-400/50 flex items-center justify-center">
+                  <!-- Eye of Providence / Moon Star SVG -->
+                  <svg class="w-8 h-8 text-amber-300/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                  </svg>
+                </div>
+              </div>
+              <p class="text-[11px] text-amber-200/80 font-medium tracking-widest mt-4 uppercase">Touch to Reveal</p>
+              <p class="text-[9px] text-purple-200/50 mt-0.5">운명의 카드를 터치해보세요</p>
+            </div>
+
+            <!-- Card Bottom Frame -->
+            <div class="flex justify-between items-center text-[10px] text-amber-300/70 tracking-widest font-mono">
+              <span>✦</span>
+              <span>DESTINY ✦</span>
+            </div>
+          </div>
+
+          <!-- Card Back (Revealed Tarot Card) -->
+          <div id="cardBackFace" class="tarot-card-face tarot-card-back absolute inset-0 w-full h-full rounded-2xl p-2.5 bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#F5EFE0] text-brand-dark flex flex-col justify-between border-2 border-brand-gold shadow-glow overflow-hidden">
+            <!-- Card Roman Numeral & Title -->
+            <div class="text-center pt-1 border-b border-amber-900/10 pb-1">
+              <span id="revealedNumber" class="text-[10px] font-bold tracking-widest text-amber-800">0</span>
+              <h3 id="revealedNameEng" class="text-xs font-bold tracking-wider text-amber-950 uppercase">THE FOOL</h3>
+            </div>
+
+            <!-- Card Illustrated Artwork Area -->
+            <div class="my-auto flex flex-col items-center justify-center py-2 px-1 relative">
+              <div id="revealedIllustration" class="w-24 h-24 rounded-full bg-gradient-to-tr from-amber-100 to-purple-100 border border-amber-200 flex items-center justify-center shadow-inner relative overflow-hidden">
+                <!-- Dynamic SVG will be injected here -->
+                <svg class="w-14 h-14 text-amber-600 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path><path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path><path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+              </div>
+              <span id="revealedNameKor" class="text-sm font-bold text-brand-dark mt-3">바보 (순수와 모험)</span>
+              <span id="revealedKeyword" class="text-[10px] text-brand-sub mt-0.5 bg-white/80 px-2 py-0.5 rounded-full border border-amber-200/60">#새로운출발 #자유 #가능성</span>
+            </div>
+
+            <!-- Card Bottom Roman & Seal -->
+            <div class="text-center border-t border-amber-900/10 pt-1">
+              <span class="text-[9px] tracking-wider text-amber-900/60 font-serif">AURORA TAROT ARCHETYPE</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Small hint underneath card -->
+    <p id="deckHint" class="text-center text-xs text-brand-muted -mt-1 mb-2">
+      카드를 터치하거나 질문을 적어주시면 카드가 열립니다
+    </p>
+    </div>
+
+    <!-- 대화 화면 — 초기화면이 접히면 여기가 뜬다 -->
+    <section id="chatScreen" class="hidden flex-1 flex flex-col gap-3 z-10 py-2 opacity-0 transition-opacity duration-500 overflow-y-auto"></section>
+
+    <!-- 카드 뽑기 무대 — 가운데 뿅 → 터치하면 열림 → 스르륵 사라짐 -->
+    <div id="cardStage" class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-white/55 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-500">
+      <div class="perspective-container">
+        <div id="stageCard" class="tarot-card-inner relative w-[208px] h-[338px] rounded-2xl shadow-card cursor-pointer"
+             style="transform: scale(.25) rotate(-14deg); opacity:0;">
+
+          <!-- 뒷면 (아직 안 뒤집힌 상태) -->
+          <div class="tarot-card-face absolute inset-0 w-full h-full rounded-2xl p-3 bg-gradient-to-b from-[#2B2353] via-[#1E173D] to-[#120D29] text-white flex flex-col justify-between border border-white/20 overflow-hidden">
+            <div class="flex justify-between items-center text-[10px] text-amber-300/70 tracking-widest font-mono"><span>&#10022;</span><span>&#10022;</span></div>
+            <div class="flex flex-col items-center justify-center my-auto">
+              <div class="w-28 h-28 rounded-full border border-amber-300/30 flex items-center justify-center">
+                <div class="w-20 h-20 rounded-full border border-dashed border-amber-300/40 animate-spin" style="animation-duration:22s;"></div>
+              </div>
+              <p class="text-[11px] text-amber-200/80 font-medium tracking-widest mt-4 uppercase">Touch to Reveal</p>
+            </div>
+            <div class="flex justify-between items-center text-[10px] text-amber-300/70 tracking-widest font-mono"><span>&#10022;</span><span>&#10022;</span></div>
+          </div>
+
+          <!-- 앞면 (열린 카드) -->
+          <div class="tarot-card-face tarot-card-back absolute inset-0 w-full h-full rounded-2xl p-3 bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#F5EFE0] text-brand-dark flex flex-col justify-between border-2 border-brand-gold shadow-glow overflow-hidden">
+            <div class="text-center pt-1 border-b border-amber-900/10 pb-1">
+              <span id="stageNumber" class="text-[10px] font-bold tracking-widest text-amber-800">0</span>
+              <h3 id="stageNameEng" class="text-xs font-bold tracking-wider text-amber-950 uppercase">THE FOOL</h3>
+            </div>
+            <div class="my-auto flex flex-col items-center justify-center py-2">
+              <div id="stageIllustration" class="w-24 h-24 rounded-full bg-gradient-to-tr from-amber-100 to-purple-100 border border-amber-200 flex items-center justify-center shadow-inner"></div>
+              <span id="stageNameKor" class="text-sm font-bold text-brand-dark mt-3">바보</span>
+              <span id="stageKeyword" class="text-[10px] text-brand-sub mt-1 bg-white/80 px-2 py-0.5 rounded-full border border-amber-200/60"></span>
+            </div>
+            <div class="text-center border-t border-amber-900/10 pt-1">
+              <span class="text-[9px] tracking-wider text-amber-900/60 font-serif">AURORA TAROT ARCHETYPE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p id="stageHint" class="mt-7 text-xs font-semibold tracking-wide text-brand-600 animate-pulse">카드를 터치해서 열어보세요</p>
+    </div>
+
+
+    <!-- Bottom Floating Input Bar -->
+    <div class="fixed md:absolute bottom-4 left-0 right-0 px-5 z-30 max-w-md mx-auto">
+      <form id="tarotForm" onsubmit="handleFormSubmit(event)" class="glass-input rounded-full p-1.5 pl-5 flex items-center gap-2 transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-500/40">
+        <input 
+          type="text" 
+          id="userInput" 
+          placeholder="한 줄 고민을 적어주세요..."
+          maxlength="80"
+          autocomplete="off"
+          class="w-full bg-transparent text-sm text-brand-dark placeholder-brand-muted outline-none py-2 font-medium"
+        />
+        <button 
+          type="submit" 
+          id="btnSubmit" 
+          aria-label="타로 카드 뽑기"
+          class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-tr from-brand-600 to-brand-500 text-white flex items-center justify-center shadow-md hover:brightness-105 active:scale-95 transition-all">
+          <svg class="w-4 h-4 transform rotate-45 -translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Elegant Custom Toast Notification -->
+    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-panel px-4 py-2.5 rounded-full shadow-lg text-xs font-semibold text-brand-dark flex items-center gap-2 transform -translate-y-12 opacity-0 pointer-events-none transition-all duration-300">
+      <span id="toastIcon" class="w-2 h-2 rounded-full bg-brand-500"></span>
+      <span id="toastMessage">알림 메시지</span>
+    </div>
+
+  </main>
+
+  <script>
+    // State management
+    let freeCredits = 3;
+    let isFlipped = false;
+    let isGenerating = false;
+    let currentCardIndex = 0;
+
+    // Rich Tarot Cards Archetype Database
+    const tarotDeck = [
+      {
+        number: "0",
+        nameEng: "THE FOOL",
+        nameKor: "바보 (The Fool)",
+        keyword: "#새로운시작 #순수 #자유로운도약",
+        iconSvg: `<svg class="w-12 h-12 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 9 9"></path><path d="m8 12 3 3 5-6"></path></svg>`,
+        readings: {
+          love: "상대방에 대한 미련과 두려움을 잠시 내려놓으세요. 바보 카드는 계산된 계획보다 ‘있는 그대로의 솔직한 마음’을 전달할 때 예상치 못한 순수한 전환점이 찾아온다고 말합니다. 자존심의 무게를 가볍게 비워내 보세요.",
+          career: "새로운 모험을 떠나기에 완벽한 시기입니다. 모든 조건이 완벽해질 때를 기다리면 영영 떠나지 못합니다. 당신의 본능과 호기심을 믿고 가벼운 배낭 하나만 멘 채 첫 발을 내딛어도 좋습니다. 세상은 당신의 도전을 응원합니다.",
+          wealth: "지금은 무리한 욕심이나 과도한 재테크에 얽매이기보다, 내 일상의 작은 지출을 정리하고 새로운 가능성을 탐색할 때입니다. 정체되었던 흐름이 신선한 전환을 맞이하게 될 것입니다.",
+          general: "망설임은 이제 충분합니다. 벼랑 끝처럼 보이지만 발을 내딛는 순간 보이지 않던 다리가 펼쳐집니다. 스스로를 믿고 마음이 향하는 길을 향해 가벼운 첫걸음을 떼어보세요."
+        },
+        oneLineAdvice: "“가장 눈부신 여정은 아무런 준비 없이 떠난 길에서 시작됩니다.”"
+      },
+      {
+        number: "XVII",
+        nameEng: "THE STAR",
+        nameKor: "별 (The Star)",
+        keyword: "#희망과치유 #영감 #빛나는확신",
+        iconSvg: `<svg class="w-12 h-12 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
+        readings: {
+          love: "어두운 밤하늘을 조용히 비추는 별처럼, 서로에게 남은 감정의 온기는 아직 사라지지 않았습니다. 조급하게 재촉하기보다는 고요하게 스스로의 마음을 보듬어줄 때 상대방의 마음도 당신을 향해 빛을 냅니다.",
+          career: "지금 겪고 있는 혼란은 당신의 진짜 재능을 찾아가는 과정입니다. 별 카드는 당신이 품은 비전이 옳다고 말합니다. 주변의 소음에 흔들리지 말고 당신의 별자리를 따라 묵묵히 나아가세요.",
+          wealth: "물질적인 조급함이 점차 걷히고 안정된 샘물이 솟아오릅니다. 지출에 대한 불안을 내려놓고 장기적인 미래 가치에 투자할 때 당신의 곳간은 서서히 풍요로워집니다.",
+          general: "상처받은 마음이 서서히 아물고 있습니다. 깊은 밤일수록 별은 더욱 맑게 반짝입니다. 스스로에게 다정해지세요. 당신은 이미 올바른 방향으로 나아가고 있습니다."
+        },
+        oneLineAdvice: "“어둠이 깊다는 것은 곧 별이 가장 아름답게 빛날 시간이라는 뜻입니다.”"
+      },
+      {
+        number: "X",
+        nameEng: "WHEEL OF FORTUNE",
+        nameKor: "운명의 수레바퀴",
+        keyword: "#변화의흐름 #전환점 #피할수없는기회",
+        iconSvg: `<svg class="w-12 h-12 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="m14.31 8 5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="m7.38 12 5.74-9.94"></path><path d="M9.69 16 3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="m16.62 12-5.74 9.94"></path></svg>`,
+        readings: {
+          love: "인연의 파도가 요동치고 있습니다. 억지로 붙잡으려 애쓰지 않아도, 운명의 수레바퀴는 만나야 할 사람을 반드시 제자리에 데려다 놓습니다. 순리에 맡기며 기다려보세요.",
+          career: "정체되었던 흐름이 급물살을 타기 시작합니다. 뜻밖의 제안이나 기회가 찾아올 조짐입니다. 두려워하지 말고 변화의 흐름에 올라타세요. 지금이 바로 판도를 바꿀 타이밍입니다.",
+          wealth: "재정적 흐름이 반전될 전환점에 서 있습니다. 막혀있던 돈길이 우연한 계기로 풀릴 수 있으니 준비된 태도로 다가오는 기회를 포착하세요.",
+          general: "인생의 모든 계절에는 끝과 시작이 있습니다. 지금의 답답함은 수레바퀴가 가장 아래에 와 있기 때문입니다. 곧 위로 올라갈 일만 남았습니다."
+        },
+        oneLineAdvice: "“바람의 방향을 바꿀 순 없지만, 돛을 조정해 어디로든 갈 수 있습니다.”"
+      },
+      {
+        number: "VI",
+        nameEng: "THE LOVERS",
+        nameKor: "연인 (The Lovers)",
+        keyword: "#마음의공명 #조화와선택 #신뢰",
+        iconSvg: `<svg class="w-12 h-12 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
+        readings: {
+          love: "진심은 통하게 되어 있습니다. 두 사람 사이에 오해가 있었다면, 솔직한 대화의 손을 먼저 내밀어보세요. 이 카드는 서로의 영혼이 진정으로 원하고 있는 화해를 비추고 있습니다.",
+          career: "혼자만의 고군분투보다는 협업과 파트너십이 큰 성과를 이끌어냅니다. 동료나 파트너와 뜻을 맞출 때 시너지가 폭발할 것입니다.",
+          wealth: "충동적인 지출 대신, 가치관에 일치하는 현명한 선택이 필요합니다. 마음의 허기를 소비로 채우려 하지 마세요.",
+          general: "마음속 두 갈래 길 중, 당신의 가슴을 진정으로 뛰게 하는 선택지를 택하세요. 머리의 계산보다 영혼의 목소리가 정답입니다."
+        },
+        oneLineAdvice: "“사랑과 용기는 결국 같은 뿌리에서 자라납니다.”"
+      }
+    ];
+
+    // Elegant Sound Synthesizer using Web Audio API (No external sound files)
+    function playChime(type = 'soft') {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        const now = ctx.currentTime;
+        if (type === 'soft') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(528, now); // 528Hz Love/Healing frequency
+          osc.frequency.exponentialRampToValueAtTime(792, now + 0.35);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+          osc.start(now);
+          osc.stop(now + 0.65);
+        } else if (type === 'reveal') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.2);
+          osc.frequency.exponentialRampToValueAtTime(1320, now + 0.5);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+          osc.start(now);
+          osc.stop(now + 0.85);
+        }
+      } catch (e) {
+        // AudioContext auto-play restriction fallback
+      }
+    }
+
+    // 3D Tilt Interaction on Card Deck
+    const deckElement = document.getElementById('cardDeck');
+    const tarotInner = document.getElementById('tarotCard');
+
+    if (deckElement && window.matchMedia('(hover: hover)').matches) {
+      deckElement.addEventListener('mousemove', (e) => {
+        if (isGenerating) return;
+        const rect = deckElement.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateX = -y / 7;
+        const rotateY = x / 7;
+        
+        const flipBase = isFlipped ? 180 : 0;
+        tarotInner.style.transform = `rotateX(${rotateX}deg) rotateY(${flipBase + rotateY}deg) scale(1.03)`;
+      });
+
+      deckElement.addEventListener('mouseleave', () => {
+        const flipBase = isFlipped ? 180 : 0;
+        tarotInner.style.transform = `rotateX(0deg) rotateY(${flipBase}deg) scale(1)`;
+      });
+    }
+
+    // Toggle card directly on click
+    /* 초기화면 덱은 장식이다. 뽑기는 대화 안에서 한다 */
+    function toggleCardDirectly() {
+      if (isGenerating) return;
+      playChime('soft');
+      showToast('먼저 한 줄만 적어주세요');
+      document.getElementById('userInput').focus();
+    }
+
+    // Update Card Display Elements
+    function updateCardDisplay(card) {
+      document.getElementById('revealedNumber').innerText = card.number;
+      document.getElementById('revealedNameEng').innerText = card.nameEng;
+      document.getElementById('revealedNameKor').innerText = card.nameKor;
+      document.getElementById('revealedKeyword').innerText = card.keyword;
+      document.getElementById('revealedIllustration').innerHTML = card.iconSvg;
+    }
+
+    /* ────────────────────────────────────────────────────────────
+       흐름 (2026-09-24 사장님 지시)
+
+         손님이 한 줄 적음
+           → 초기화면이 스르륵 접히고 대화화면으로 바뀐다
+           → 봇이 "카드 눌러볼래?" 하고 묻는다
+           → 누르면 카드가 가운데 뿅 나타난다
+           → 터치하면 열린다
+           → 스르륵 사라지고 대화가 이어진다
+
+       대화는 메모리에만 있다. 새로고침하면 사라진다
+       ──────────────────────────────────────────────────────── */
+
+    let 대화시작 = false;       // 초기화면을 이미 접었나
+    let 턴 = 0;
+    let 물은것 = null;          // 카드 뽑기를 기다리는 질문
+    const 오간말 = [];          // 이 배열 하나가 전부다. 어디에도 안 남는다
+
+    const 대화판 = document.getElementById('chatScreen');
+    const 무대 = document.getElementById('cardStage');
+    const 무대카드 = document.getElementById('stageCard');
+
+    /* 초기화면을 접는다 */
+    function 대화로바꾸기(){
+      if (대화시작) return;
+      대화시작 = true;
+      const 초기 = document.getElementById('introScreen');
+      초기.style.maxHeight = 초기.scrollHeight + 'px';
+      초기.style.transition = 'max-height .65s cubic-bezier(.4,0,.2,1), opacity .4s ease, transform .5s ease';
+      requestAnimationFrame(function(){
+        초기.style.maxHeight = '0px';
+        초기.style.opacity = '0';
+        초기.style.transform = 'translateY(-16px)';
+      });
+      setTimeout(function(){ 초기.classList.add('hidden'); }, 700);
+
+      대화판.classList.remove('hidden');
+      requestAnimationFrame(function(){ 대화판.classList.replace('opacity-0', 'opacity-100'); });
+    }
+
+    /* 말풍선 */
+    function 손님말(글){
+      const d = document.createElement('div');
+      d.className = 'self-end max-w-[82%] px-4 py-2.5 rounded-[18px] rounded-br-md bg-gradient-to-tr from-brand-600 to-brand-500 text-white text-sm leading-relaxed shadow-md';
+      d.style.cssText += 'opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s';
+      d.innerText = 글;
+      대화판.appendChild(d);
+      requestAnimationFrame(function(){ d.style.opacity='1'; d.style.transform='none'; });
+      맨아래(); return d;
+    }
+    function 봇말(글){
+      const d = document.createElement('div');
+      d.className = 'self-start max-w-[86%] px-4 py-3 rounded-[18px] rounded-bl-md glass-panel text-sm leading-relaxed text-brand-dark shadow-soft whitespace-pre-line';
+      d.style.cssText += 'opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s';
+      d.innerText = 글 || '';
+      대화판.appendChild(d);
+      requestAnimationFrame(function(){ d.style.opacity='1'; d.style.transform='none'; });
+      맨아래(); return d;
+    }
+    function 점찍기(){
+      const d = document.createElement('div');
+      d.className = 'self-start px-4 py-3.5 rounded-[18px] rounded-bl-md glass-panel flex gap-1.5 shadow-soft';
+      d.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-brand-200 animate-bounce"></span>'
+                  + '<span class="w-1.5 h-1.5 rounded-full bg-brand-200 animate-bounce" style="animation-delay:.15s"></span>'
+                  + '<span class="w-1.5 h-1.5 rounded-full bg-brand-200 animate-bounce" style="animation-delay:.3s"></span>';
+      대화판.appendChild(d); 맨아래(); return d;
+    }
+    function 맨아래(){ 대화판.scrollTop = 대화판.scrollHeight; }
+    function 한숨(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+
+    /* 한 글자씩 흘린다 */
+    function 한자씩(자리, 글){
+      return new Promise(function(끝){
+        자리.innerText = ''; let i = 0;
+        const 톡 = function(){
+          if (i >= 글.length) return 끝();
+          const 글자 = 글[i++];
+          자리.innerText += 글자; 맨아래();
+          setTimeout(톡, 글자 === '\n' ? 70 : 18);
+        };
+        톡();
+      });
+    }
+
+    /* ── 우리 서버에 붙는다 ──────────────────────────────────────
+       POST /ask {손님, 말} → {글, 카드, 방향, 그림, 턴, 남은무료} 또는 {막힘, 글}
+
+       1턴은 조립(파이썬, 토큰 0), 2턴부터 클로드가 쓴다. 서버가 알아서 가른다.
+       서버가 안 떠 있으면 아래 데모로 떨어져서 모양만 볼 수 있다.
+       ──────────────────────────────────────────────────────── */
+    const 손님 = 'web-' + Math.random().toString(36).slice(2, 11) + '-' + Date.now().toString(36);
+
+    async function 물어보기(말){
+      const r = await fetch('/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 손님: 손님, 말: 말 })
+      });
+      if (!r.ok) throw new Error('서버 ' + r.status);
+      return await r.json();
+    }
+
+    /* 프리셋을 누르면 바로 시작한다 */
+    function handleQuickSelect(presetText){
+      document.getElementById('userInput').value = presetText;
+      playChime('soft');
+      startReadingFlow(presetText);
+    }
+
+    function handleFormSubmit(e){
+      e.preventDefault();
+      const input = document.getElementById('userInput');
+      const 질문 = input.value.trim();
+      if (!질문){ showToast('고민이나 궁금한 점을 한 줄 적어주세요'); input.focus(); return; }
+      startReadingFlow(질문);
+    }
+
+    /* 손님 말 한 번 = 한 턴 */
+    async function startReadingFlow(질문){
+      if (isGenerating) return;
+      if (freeCredits <= 0){ showToast('무료 3회를 다 쓰셨어요'); return; }
+
+      isGenerating = true;
+      const 보냄 = document.getElementById('btnSubmit');
+      보냄.classList.add('opacity-50', 'pointer-events-none');
+      document.getElementById('userInput').value = '';
+
+      const 처음 = !대화시작;
+      대화로바꾸기();
+      if (처음) await 한숨(340);
+      손님말(질문);
+      오간말.push(['손님', 질문]);
+      턴++;
+
+      if (턴 === 1){
+        // 첫 턴에만 카드를 뽑는다. 카드 한 장으로 끝까지 간다
+        물은것 = 질문;
+        const 점 = 점찍기();
+        await 한숨(700);
+        점.remove();
+        카드권하기();
+      } else {
+        const 점 = 점찍기();
+        let 답;
+        try { 답 = await 물어보기(질문); }
+        catch (e) { 답 = 데모답(질문, false); }
+        점.remove();
+        if (답.막힘){ 무료끝(); isGenerating = false; return; }
+        await 풀이뿌리기(답, null);
+        남은것쓰기(답);
+        풀렸나();
+      }
+    }
+
+    /* "카드 눌러볼래?" */
+    function 카드권하기(){
+      const d = document.createElement('div');
+      d.className = 'self-start max-w-[86%] glass-panel rounded-[18px] rounded-bl-md px-4 py-3.5 shadow-soft';
+      d.style.cssText += 'opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s';
+      d.innerHTML =
+        '<p class="text-sm text-brand-dark leading-relaxed">그 얘기로 한 장 뽑을게<br>카드 눌러볼래?</p>' +
+        '<button type="button" class="mt-3 w-full py-2.5 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-500 text-white text-xs font-bold tracking-tight shadow-md active:scale-95 transition-all">카드 뽑기</button>';
+      const 단추 = d.querySelector('button');
+      단추.addEventListener('click', function(){
+        단추.disabled = true;
+        단추.classList.add('opacity-40', 'pointer-events-none');
+        무대열기();
+      });
+      대화판.appendChild(d);
+      requestAnimationFrame(function(){ d.style.opacity='1'; d.style.transform='none'; });
+      맨아래();
+    }
+
+    /* 카드가 가운데 뿅. 동시에 서버에 물어본다 (터치하는 동안 답이 온다) */
+    let 서버약속 = null;
+    function 무대열기(){
+      서버약속 = 물어보기(물은것).catch(function(){ return 데모답(물은것, true); });
+
+      무대카드.classList.remove('flipped');
+      무대카드.style.transition = 'none';
+      무대카드.style.transform = 'scale(.25) rotate(-14deg)';
+      무대카드.style.opacity = '0';
+      document.getElementById('stageHint').style.opacity = '1';
+      document.getElementById('stageHint').innerText = '카드를 터치해서 열어보세요';
+
+      무대.classList.remove('pointer-events-none');
+      무대.classList.replace('opacity-0', 'opacity-100');
+      playChime('soft');
+
+      requestAnimationFrame(function(){
+        무대카드.style.transition = 'transform .62s cubic-bezier(.34,1.56,.64,1), opacity .35s ease';
+        무대카드.style.transform = 'scale(1) rotate(0deg)';
+        무대카드.style.opacity = '1';
+      });
+    }
+
+    /* 서버가 준 카드로 무대 앞면을 채운다 */
+    function 무대카드채우기(답){
+      const 이름 = (답.카드 || '') + (답.방향 ? ' ' + 답.방향 : '');
+      document.getElementById('stageNumber').innerText = 답.방향 === '역방향' ? 'REVERSED' : 'UPRIGHT';
+      document.getElementById('stageNameEng').innerText = 답.카드 || 'TAROT';
+      document.getElementById('stageNameKor').innerText = 이름;
+      document.getElementById('stageKeyword').innerText = '';
+      const 그림칸 = document.getElementById('stageIllustration');
+      if (답.그림){
+        그림칸.className = 'w-32 h-44 rounded-lg overflow-hidden border border-amber-200 shadow-inner';
+        그림칸.innerHTML = '<img src="' + 답.그림 + '" alt="" class="w-full h-full object-cover"' +
+                           ' style="' + (답.방향 === '역방향' ? 'transform:rotate(180deg)' : '') + '">';
+      } else {
+        그림칸.className = 'w-24 h-24 rounded-full bg-gradient-to-tr from-amber-100 to-purple-100 border border-amber-200 flex items-center justify-center shadow-inner';
+        그림칸.innerHTML = '<span class="text-2xl">&#10022;</span>';
+      }
+    }
+
+    /* 터치하면 열린다 → 스르륵 사라진다 → 대화가 이어진다 */
+    let 여는중 = false;
+    무대카드.addEventListener('click', async function(){
+      if (여는중) return;
+      여는중 = true;
+
+      const 힌트 = document.getElementById('stageHint');
+      힌트.innerText = '카드를 여는 중';
+
+      let 답;
+      try { 답 = await 서버약속; }
+      catch (e) { 답 = 데모답(물은것, true); }
+
+      if (답.막힘){
+        무대닫기(); 여는중 = false;
+        무료끝(); isGenerating = false; return;
+      }
+
+      무대카드채우기(답);
+      무대카드.classList.add('flipped');
+      playChime('reveal');
+      힌트.style.transition = 'opacity .3s';
+      힌트.style.opacity = '0';
+
+      await 한숨(1600);                        // 열린 카드를 잠깐 보여준다
+      무대카드.style.transition = 'transform .6s cubic-bezier(.4,0,.2,1), opacity .5s ease';
+      무대카드.style.transform = 'scale(.78) translateY(-26px)';
+      무대카드.style.opacity = '0';
+      무대닫기();
+      await 한숨(520);
+      여는중 = false;
+
+      await 풀이뿌리기(답, true);
+      남은것쓰기(답);
+      풀렸나();
+    });
+
+    function 무대닫기(){
+      무대.classList.replace('opacity-100', 'opacity-0');
+      setTimeout(function(){ 무대.classList.add('pointer-events-none'); }, 500);
+    }
+
+    /* 서버가 준 글을 말풍선에 흘린다 */
+    async function 풀이뿌리기(답, 카드보이기){
+      const 자리 = 봇말('');
+      if (카드보이기 && 답.카드){
+        const 머리 = document.createElement('div');
+        머리.className = 'flex items-center gap-2 mb-2 pb-2 border-b border-brand-100';
+        머리.innerHTML =
+          (답.그림 ? '<img src="' + 답.그림 + '" alt="" class="w-8 h-11 rounded object-cover border border-amber-200"' +
+                     ' style="' + (답.방향 === '역방향' ? 'transform:rotate(180deg)' : '') + '">'
+                   : '<span class="w-7 h-7 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 text-[11px] font-bold">&#10022;</span>') +
+          '<span class="text-xs font-bold text-brand-dark">' + (답.카드 || '') + ' ' + (답.방향 || '') + '</span>';
+        자리.insertBefore(머리, 자리.firstChild);
+      }
+      const 몸 = document.createElement('div');
+      자리.appendChild(몸);
+      await 한자씩(몸, 답.글 || '');
+      오간말.push(['나', 답.글 || '']);
+    }
+
+    function 남은것쓰기(답){
+      if (typeof 답.남은무료 === 'number') freeCredits = 답.남은무료;
+      else freeCredits = Math.max(0, freeCredits - 1);
+      document.getElementById('remainCount').innerText = freeCredits;
+    }
+
+    /* 무료가 끝났나 */
+    function 풀렸나(){
+      isGenerating = false;
+      if (freeCredits <= 0){ 무료끝(); return; }
+      document.getElementById('btnSubmit').classList.remove('opacity-50', 'pointer-events-none');
+      document.getElementById('userInput').focus();
+    }
+
+    function 무료끝(){
+      if (document.getElementById('paywall')) return;
+      const d = document.createElement('div');
+      d.id = 'paywall';
+      d.className = 'self-stretch mt-1 p-5 rounded-2xl text-center bg-gradient-to-br from-brand-50 to-pink-50 border border-brand-100 shadow-soft';
+      d.style.cssText += 'opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s';
+      d.innerHTML =
+        '<b class="block text-[15px] font-bold text-brand-dark tracking-tight">여기까지가 무료예요</b>' +
+        '<p class="mt-1.5 text-xs text-brand-sub leading-relaxed">카드는 아직 아래쪽이 남았어요<br>이어서 보면 그 한 장을 끝까지 풉니다</p>' +
+        '<button type="button" class="mt-4 w-full py-3 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-500 text-white text-sm font-bold shadow-md active:scale-95 transition-all">이어서 보기</button>' +
+        '<small class="block mt-2.5 text-[11px] text-brand-muted">이어서 보는 풀이는 AI가 씁니다</small>';
+      d.querySelector('button').addEventListener('click', function(){ showToast('결제는 아직 안 붙였어요'); });
+      대화판.appendChild(d);
+      requestAnimationFrame(function(){ d.style.opacity='1'; d.style.transform='none'; });
+      맨아래();
+
+      const 입력 = document.getElementById('userInput');
+      입력.disabled = true;
+      입력.placeholder = '이어서 보면 계속 얘기할 수 있어요';
+      document.getElementById('btnSubmit').classList.add('opacity-40', 'pointer-events-none');
+      document.getElementById('freeBadge').classList.add('opacity-50');
+    }
+
+    /* 서버가 안 떠 있을 때만 쓰는 데모. 모양만 본다 */
+    function 데모답(질문, 카드있게){
+      const 그것 = tarotDeck[Math.floor(Math.random() * tarotDeck.length)];
+      return {
+        글: 카드있게
+          ? (그것.readings[analyzeCategory(질문 || '')] + '\n\n' + 그것.oneLineAdvice)
+          : '아까 그 카드 그대로 보고 있어\n방금 적은 걸 보니 답은 이미 정해둔 거 같은데\n\n언제까지인지는 이 카드로는 안 보여',
+        카드: 카드있게 ? 그것.nameKor : '',
+        방향: '정방향',
+        그림: null,
+        남은무료: Math.max(0, freeCredits - 1),
+        데모: true
+      };
+    }
+
+    // Determine category based on keywords
+    function analyzeCategory(text) {
+      if (/연락|이별|헤어|남친|여친|연인|사랑|재회|마음/.test(text)) return 'love';
+      if (/퇴사|이직|직장|회사|취업|진로|면접|시험/.test(text)) return 'career';
+      if (/돈|재물|부자|통장|투자|주식|빚|월급/.test(text)) return 'wealth';
+      return 'general';
+    }
+
+    // Toast Notification Utility
+    let toastTimeout = null;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msgSpan = document.getElementById('toastMessage');
+      msgSpan.innerText = message;
+
+      toast.classList.remove('opacity-0', '-translate-y-12', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-12', 'pointer-events-none');
+      }, 2600);
+    }
+
+    // Share / Save Result
+    /* 마지막 풀이를 복사한다 */
+    function shareReadingResult() {
+      const 말들 = 대화판.querySelectorAll('.self-start');
+      const 마지막 = 말들[말들.length - 1];
+      const 글 = 마지막 ? 마지막.innerText.trim() : '';
+      if (!글) { showToast('아직 복사할 풀이가 없어요'); return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(글).then(function(){ showToast('조언을 복사했어요'); },
+                                               function(){ showToast('복사가 막혀 있어요'); });
+      } else {
+        showToast('복사가 막혀 있어요');
+      }
+    }
+
+    // Info button interaction
+    document.getElementById('btnInfo').addEventListener('click', () => {
+      showToast("마음의 별자리: 당신의 무의식을 읽어주는 감성 AI 타로");
+      playChime('soft');
+    });
+
+    // Initialize Default First Card on page ready
+    window.addEventListener('DOMContentLoaded', () => {
+      updateCardDisplay(tarotDeck[0]);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+# 서아(@eslyn_yes) 스레드 봇 — 깃허브 대타 (2026-09-25 사장님 지시 "PC 켜져 있으면 PC, 꺼지면 클라우드 20분 텀").
+# PC 스케줄러(타로봇_바퀴, 5분마다)가 본체다. 깃허브는 **PC 심장박동이 20분 넘게 없을 때만** 대신 나선다.
+# 기록은 전부 R2 창고(seoa/) → 커밋 없음. PC 와 같은 코드·같은 창고를 쓴다.
+# 깨우는 것: Cloudflare 워커(워커/)가 20분마다 workflow_dispatch (1번). 아래 cron 은 2번 — 깃허브가 몇 시간씩 미룬다.
+# 비공개면 액션 시간이 월 2,000분이라 공개로 바꾼다 (python 비밀올리기.py --공개). 비밀값은 Secrets 에만 있고 기록은 R2 에 잠겨 있다.
+# 팔자오빠(insta-shots2)와 파일·비밀값·창고 전부 따로다.
+name: seoa
+on:
+  schedule:
+    - cron: "7 */2 * * *"       # 2시간에 한 번만 (2번 대비용). 1번은 워커가 20분마다 심장박동 보고 깨운다
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "PC 가 살아 있어도 끝까지 돈다 (시험용. 같은 창고·같은 잠금이라 중복은 안 난다)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: seoa
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Seoul            # 심장박동·대기 시각이 전부 한국 시간 문자열이다
+
+jobs:
+  wheel:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: PC 가 살아 있나 (제일 먼저. 살아 있으면 여기서 끝)
+        id: hb
+        env:
+          CLOUDFLARE_ACCOUNT_ID_2: ${{ secrets.CLOUDFLARE_ACCOUNT_ID_2 }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          pip install -q boto3 pynacl
+          q=$(python 자동.py --심장박동 | head -1)
+          echo "PC 심장박동: ${q}분 전"
+          # R2 에 못 닿으면 **빨간 불로 끝낸다.** 조용히 넘어가면 PC 꺼진 날 아무도 모른다 (깃허브가 메일로 알린다)
+          if [ "$q" = "-1" ]; then echo "R2 창고에 못 닿는다 (Secrets 비었나?)"; exit 1; fi
+          echo "quiet=$q" >> "$GITHUB_OUTPUT"
+
+      - name: PC 살아 있음 → 물러남
+        if: steps.hb.outputs.quiet < 20 && inputs.force != true
+        run: echo "PC 가 ${{ steps.hb.outputs.quiet }}분 전에 살아 있었음 → 깃허브는 물러남"
+
+      - name: 클로드 설치 (5턴부터 AI · 하루치 글)
+        if: steps.hb.outputs.quiet >= 20 || inputs.force == true
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: 한 바퀴 (PC 대신)
+        if: steps.hb.outputs.quiet >= 20 || inputs.force == true
+        env:
+          HEARTBEAT_MAX_MIN: ${{ inputs.force == true && '0' || '20' }}
+          CLOUDFLARE_ACCOUNT_ID_2: ${{ secrets.CLOUDFLARE_ACCOUNT_ID_2 }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
+          SEOA_THREADS_TOKEN: ${{ secrets.SEOA_THREADS_TOKEN }}
+          SEOA_USER_ID: ${{ secrets.SEOA_USER_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        # 저장소가 공개라 실행 화면이 누구나 보인다 → 손님 아이디(@…)는 가린다. 파이프 뒤에서 죽어도 빨간 불이 나게 pipefail
+        run: |
+          set -o pipefail
+          python 자동.py --바퀴 --대타 2>&1 | sed -E 's/@[A-Za-z0-9._]{3,}/@***/g'

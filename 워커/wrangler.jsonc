@@ -1,0 +1,15 @@
+// 서아 깨우기 워커 (2026-09-25). 20분마다 깃허브 액션 seoa.yml 을 직접 깨운다 — 사장님 지시 "깃허브 호출보다 클라우드 호출이 1번".
+// 깨우기 전에 R2(STORE 바인딩)의 seoa/심장박동.json 을 봐서 PC 가 살아 있으면 안 깨운다.
+// 팔자오빠 워커(shorts-wake)·홈페이지 워커(sajuarcade)와 별개. 비밀값은 wrangler secret GITHUB_TOKEN 하나(워크플로 실행 권한).
+// 배포 (이 폴더에서):  env -u CLOUDFLARE_API_TOKEN -u CLOUDFLARE_ACCOUNT_ID npx --prefix ../../saju-arcade wrangler deploy
+// 상태:  https://seoa-wake.bobomusic83.workers.dev  → token:true 면 산다. pc_alive 가 PC 상태
+{
+  "name": "seoa-wake",
+  "main": "index.js",
+  "account_id": "483a48f9c76d80012303cb3f6260c1bb",
+  "compatibility_date": "2026-09-01",
+  "triggers": { "crons": ["*/20 * * * *"] },
+  "vars": { "GITHUB_REPO": "koii0803/tarot-seoa", "GITHUB_REF": "master", "WORKFLOWS": "seoa.yml" },
+  "r2_buckets": [ { "binding": "STORE", "bucket_name": "babcheck-img" } ],
+  "observability": { "enabled": true }
+}
