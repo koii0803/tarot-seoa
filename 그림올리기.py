@@ -295,6 +295,60 @@ def 앞면주소(슬러그, 방향="정방향"):
     return 표.get(이름)
 
 
+# ── 번호 골라 글용 그림 (2026-09-25) ──────────────────────────────────
+# 뒷면 넉 장을 나란히 놓고 1 2 3 4 를 크게 박은 한 장. 손님은 번호만 댓글에 적는다.
+번호그림파일 = HERE.parent / "카드이미지" / "타로-번호4장.png"
+
+
+def 번호그림만들기():
+    """뒷면 4장 + 큰 숫자. PIL 로 만든다."""
+    from PIL import Image, ImageDraw, ImageFont
+    뒷면 = Image.open(BACK_IMG if "BACK_IMG" in globals() else HERE.parent / "카드이미지" / "타로-카드뒷면.png").convert("RGBA")
+    w, h = 뒷면.size
+    작은w = 480
+    작은h = int(h * 작은w / w)
+    틈 = 40
+    판 = Image.new("RGBA", (작은w * 4 + 틈 * 5, 작은h + 틈 * 2 + 160), (8, 8, 10, 255))
+    작은 = 뒷면.resize((작은w, 작은h), Image.LANCZOS)
+    글 = ImageDraw.Draw(판)
+    try:
+        폰트 = ImageFont.truetype("C:/Windows/Fonts/malgunbd.ttf", 120)
+    except Exception:
+        폰트 = ImageFont.load_default()
+    for i in range(4):
+        x = 틈 + i * (작은w + 틈)
+        판.paste(작은, (x, 틈), 작은)
+        숫자 = str(i + 1)
+        bb = 글.textbbox((0, 0), 숫자, font=폰트)
+        tw = bb[2] - bb[0]
+        글.text((x + (작은w - tw) // 2, 틈 + 작은h + 20), 숫자, fill=(230, 190, 90, 255), font=폰트)
+    번호그림파일.parent.mkdir(parents=True, exist_ok=True)
+    판.convert("RGB").save(번호그림파일, "PNG", optimize=True)
+    return 번호그림파일
+
+
+def 파일올리기(경로, 열쇠이름, 표이름):
+    """그림 파일 하나를 R2 에 올리고 주소표에 적는다. 공개 주소를 돌려준다."""
+    from pathlib import Path
+    경로 = Path(경로)
+    s3 = 창구()
+    통 = 접근값()["R2_BUCKET"]
+    열쇠 = 접두어 + 열쇠이름
+    s3.upload_file(str(경로), 통, 열쇠,
+                   ExtraArgs={"ContentType": "image/png", "CacheControl": "public, max-age=31536000"})
+    url = 공개주소(열쇠)
+    기존 = _주소표()
+    기존[표이름] = url
+    적을것 = {"설명": "카드 그림의 공개 주소. 스레드 답글에 사진 붙일 때 이 주소를 넘긴다 (PNG 만)",
+              "접두어": 접두어, "올린때": time.strftime("%Y-%m-%d %H:%M:%S"), "주소": 기존}
+    io.open(주소표, "w", encoding="utf-8").write(json.dumps(적을것, ensure_ascii=False, indent=2) + "\n")
+    return url
+
+
+def 번호그림주소():
+    return _주소표().get("번호4장")
+
+
 def main():
     p = argparse.ArgumentParser(description="카드 그림을 R2 에 올린다")
     p.add_argument("--확인", action="store_true", help="연결 시험")

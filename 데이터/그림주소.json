@@ -1,7 +1,7 @@
 {
   "설명": "카드 그림의 공개 주소. 스레드 답글에 사진 붙일 때 이 주소를 넘긴다 (PNG 만)",
   "접두어": "tarot/",
-  "올린때": "2026-09-23 21:53:57",
+  "올린때": "2026-09-25 01:17:38",
   "주소": {
     "뒷면": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/card-back.png",
     "fool": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/00-fool.png",
@@ -47,6 +47,7 @@
     "moon-역": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/18-moon-rev.png",
     "sun-역": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/19-sun-rev.png",
     "judgement-역": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/20-judgement-rev.png",
-    "world-역": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/21-world-rev.png"
+    "world-역": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/21-world-rev.png",
+    "번호4장": "https://pub-71a067f62c754bb0b68600c1ca0758c9.r2.dev/tarot/pick4.png"
   }
 }
