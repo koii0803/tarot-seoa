@@ -96,10 +96,22 @@ def 클로드():
     except Exception:
         값 = ""
     import re
+    # 터미널에서 토큰이 두 줄로 꺾여 복사되면 중간에 공백·줄바꿈이 낀다. 전부 지우고 본다 (2026-09-25 실측)
+    값 = re.sub(r"\s+", "", 값 or "")
     m = re.search(r"sk-ant-[A-Za-z0-9_\-]{20,}", 값)      # 앞뒤에 딴 글이 붙어 있어도 토큰만 뽑는다
     값 = m.group(0) if m else ""
     if not 값:
-        print("클립보드에 클로드 토큰(sk-ant-…)이 없다. `claude setup-token` 결과를 복사하고 다시")
+        # 클립보드에 없으면 **직접 붙여넣게** 한다 (2026-09-25 실측: 파워셸에서 복사가 안 돼 세 번 헛돌았다)
+        print("클립보드에 클로드 토큰(sk-ant-…)이 없다.")
+        try:
+            입력 = input("토큰을 여기 붙여넣고(마우스 오른쪽 클릭) 엔터: ")
+        except EOFError:
+            입력 = ""
+        입력 = re.sub(r"\s+", "", 입력 or "")
+        m = re.search(r"sk-ant-[A-Za-z0-9_\-]{20,}", 입력)
+        값 = m.group(0) if m else ""
+    if not 값:
+        print("토큰이 아니다. `claude setup-token` 결과(sk-ant-oat01-…)를 붙여넣어야 한다")
         return 1
     ok = 넣기("CLAUDE_CODE_OAUTH_TOKEN", 값)
     subprocess.run(["powershell", "-NoProfile", "-Command", "Set-Clipboard -Value ' '"], capture_output=True)
