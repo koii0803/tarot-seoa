@@ -67,6 +67,8 @@ def 주울것(줄들, 며칠=며칠전까지):
             continue
         if 줄.get("주웠나"):
             continue
+        if str(줄.get("까닭") or "").startswith("함정"):     # 떠보는 사람 — 절대 무시 (2026-09-26)
+            continue
         적은때 = 줄.get("적은때") or ""
         try:
             if dt.datetime.fromisoformat(적은때) < 언제까지:
