@@ -30,6 +30,7 @@ import datetime as dt
 import io
 import json
 import random
+import re
 import sys
 import time
 import urllib.error
@@ -257,8 +258,32 @@ def 댓글모으기(글수=10):
 
 
 # ── 올리기 ─────────────────────────────────────────────────────────────
+# 올리기 직전 마지막 문 (2026-09-26). 만드는 단계 검사를 안 거친 글(임시 스크립트 등)도 여기서 막는다.
+# 9/23 "test reply" 사고가 바로 그 길로 났다. DM 상담(스레드30대여페르소나\DM상담\상담.py bad_out)과 같은 기준
+나가기전막을말 = re.compile(r"(test|reply|error|undefined|null|json|todo|lorem|\{|\}|</?\w+>|API|assistant|claude)", re.I)
+
+
+def 나가기전검사(글):
+    """문제 있으면 이유, 없으면 빈 문자열"""
+    t = (글 or "").strip()
+    한, 영 = len(re.findall(r"[가-힣]", t)), len(re.findall(r"[A-Za-z]", t))
+    if not t:
+        return "빈 글"
+    if 한 < 2 or 영 > 한:
+        return "한글이 거의 없음"
+    m = 나가기전막을말.search(t)
+    if m:
+        return "시험·오류 문구(%s)" % m.group(0)
+    return ""
+
+
 def 스레드에올리기(글, 그림주소=None, 답할대상=None):
     """2단계로 올린다. 올라간 글의 아이디를 준다."""
+    문제 = 나가기전검사(글)
+    if 문제:
+        # 스레드거절로 던진다 — 답글 줄은 _거절처리가 표시·알림하고 다음 줄로 간다, 새 글은 거기서 멈춘다
+        알림.보내기("글을 안 올리고 막았어 (%s)\n%s" % (문제, (글 or "")[:200]))
+        raise 스레드거절("올리기 전 검사에 걸림: %s" % 문제, 0, None, "blocked before publish: " + 문제)
     t, 나 = 토큰()
     값 = {"access_token": t, "text": 글}
     if 그림주소:
