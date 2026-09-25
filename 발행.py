@@ -185,7 +185,7 @@ def 댓글들(글아이디):
     """
     t, 나 = 토큰()
     대화 = 끝까지("%s/conversation" % 글아이디,
-                  fields="id,text,username,timestamp,from,replied_to,is_reply_owned_by_me",
+                  fields="id,text,username,timestamp,permalink,from,replied_to,is_reply_owned_by_me",
                   reverse="false", access_token=t)
     # 내가 이미 답한 댓글은 뺀다. 안 그러면 같은 사람에게 두 번 달린다
     내것 = {x["id"] for x in 대화
@@ -420,14 +420,14 @@ def 답글만들기(진짜=False, 몇개=한바퀴최대):
             print("  → 답 안 함: %s" % " / ".join(답["문제"]))
             새줄들.append({"댓글아이디": c["id"], "손님": 손님, "댓글": 본문,
                          "상태": "안함", "까닭": " / ".join(답["문제"]),
-                         "내글": c.get("내글", ""),
+                         "내글": c.get("내글", ""), "링크": c.get("permalink") or "",
                          "적은때": dt.datetime.now().isoformat(timespec="minutes")})
             continue
         if not 답["통과"]:
             print("  → 검사 실패: %s" % " / ".join(답["문제"]))
             새줄들.append({"댓글아이디": c["id"], "손님": 손님, "댓글": 본문,
                          "상태": "실패", "까닭": " / ".join(답["문제"]),
-                         "내글": c.get("내글", ""),
+                         "내글": c.get("내글", ""), "링크": c.get("permalink") or "",
                          "적은때": dt.datetime.now().isoformat(timespec="minutes")})
             continue
 
