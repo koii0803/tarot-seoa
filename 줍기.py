@@ -69,6 +69,8 @@ def 주울것(줄들, 며칠=며칠전까지):
             continue
         if str(줄.get("까닭") or "").startswith("함정"):     # 떠보는 사람 — 절대 무시 (2026-09-26)
             continue
+        if str(줄.get("까닭") or "").startswith("조용히"):   # 글마다 다는 사람 세 번째 글 — 일부러 둔 것 (2026-09-27)
+            continue
         적은때 = 줄.get("적은때") or ""
         try:
             if dt.datetime.fromisoformat(적은때) < 언제까지:
@@ -118,6 +120,12 @@ def 줍기(진짜=False, 며칠=며칠전까지, 몇개=한번에최대):
             continue
 
         나갈때 = 지금 + dt.timedelta(minutes=random.randint(*늦출분))
+        if 답.get("딴글나갈때"):          # 저쪽 글 답보다 늦게 (발행.답글만들기 와 같은 까닭)
+            try:
+                나갈때 = max(나갈때, dt.datetime.fromisoformat(답["딴글나갈때"])
+                          + dt.timedelta(minutes=random.randint(3, 8)))
+            except ValueError:
+                pass
         새줄들.append({
             "댓글아이디": 줄.get("댓글아이디"),
             "손님": 손님, "댓글": 댓글,

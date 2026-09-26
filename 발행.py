@@ -513,8 +513,16 @@ def 답글만들기(진짜=False, 몇개=한바퀴최대):
             #   거기는 AI 가 쓰는 깊은 대화 자리다. 2분 만에 척 답하면 봇 티가 난다.
             #   바퀴를 따로 만드는 것보다 이게 안 복잡하고 터질 자리도 없다
             늦춤 = random.randint(*(깊은대화늦출분 if 답["턴"] >= 깊은턴 else 늦출분))
-            print("  → %d분 뒤에 나간다" % 늦춤)
-            줄["나갈때"] = (dt.datetime.now() + dt.timedelta(minutes=늦춤)).isoformat(timespec="minutes")
+            나갈때 = dt.datetime.now() + dt.timedelta(minutes=늦춤)
+            # "아까 저 글에 물어봤지? 거기서 이어서 하자" 는 저쪽 답보다 먼저 나가면 말이 안 된다 (2026-09-27)
+            if 답.get("딴글나갈때"):
+                try:
+                    나갈때 = max(나갈때, dt.datetime.fromisoformat(답["딴글나갈때"])
+                              + dt.timedelta(minutes=random.randint(3, 8)))
+                except ValueError:
+                    pass
+            print("  → %s 에 나간다" % 나갈때.strftime("%H:%M"))
+            줄["나갈때"] = 나갈때.isoformat(timespec="minutes")
         새줄들.append(줄)
 
     대기목록.합치기(새줄들)

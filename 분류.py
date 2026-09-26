@@ -136,6 +136,9 @@ def 인사냐(댓글):
     t = (댓글 or "").strip()
     if "?" in t:
         return False
+    # 물음표 없이 묻고 끝에 "감사합니다" 붙이는 사람이 많다 (2026-09-27). 질문이 남아 있으면 질문이다
+    if 질문남았나(t):
+        return False
     낮춤 = t.lower().replace(" ", "")
     if not any(w.replace(" ", "") in 낮춤 for w in 인사말):
         return False
